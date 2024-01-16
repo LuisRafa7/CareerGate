@@ -1,22 +1,19 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { AuthContext } from "../../context/auth.context";
 
-const ProfilePage = ({ user }) => {
-  if (!user) {
-    return <div>Error</div>;
-  }
-
-  const { name, email, password} = user;
-
-  return (
-    <div>
-      <h1>Profile Page</h1>
+const ProfilePage = () => {
+  const { user } = useContext(AuthContext);
+  if (user) {
+    return (
       <div>
-        <p>Name: {name}</p>
-        <p>Email: {email}</p>
-        <p>Password: {password}</p>
+        <h1>Profile Page</h1>
+        <div>
+          <p>Name: {user.name} </p>
+          <p>Email: {user.email} </p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default ProfilePage;
