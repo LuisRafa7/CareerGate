@@ -1,20 +1,33 @@
 import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { Routes, Route } from "react-router-dom";
-import SignupPage from "./pages/auth/SingupPage";
-import LoginPage from "./pages/auth/LoginPage";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await fetch("");
+        const userData = await response.json();
+
+        setUser(userData);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchUser();
+  }, []);
 
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
     </>
   );
 }
