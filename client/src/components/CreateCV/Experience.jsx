@@ -24,19 +24,10 @@ function Experience() {
 
   return (
     <>
-<<<<<<< HEAD
       <form onSubmit={(e) => {
     e.preventDefault();
     handleSubmit();
    }}>
-=======
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmit();
-        }}
-      >
->>>>>>> 2ce9d2e195f0f498f5346dd884af92f6f3b539ed
         <label htmlFor="profession">Profession:</label>
         <input
           type="text"
