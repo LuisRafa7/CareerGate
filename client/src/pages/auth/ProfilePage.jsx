@@ -1,11 +1,17 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/auth.context";
-import axios from 'axios';
+import axios from "axios";
 
 const ProfilePage = () => {
-  const { user, setUser } = useContext(AuthContext);
+  const {
+    user,
+    setUser,
+    authenticateUser,
+    removeToken,
+    storeToken,
+    changeUser,
+  } = useContext(AuthContext);
 
-  const [user1, setUser1] = useState();
   const [isEditing, setIsEditing] = useState(false);
   const [editedName, setEditedName] = useState(user ? user.name : "");
 
@@ -15,11 +21,17 @@ const ProfilePage = () => {
   const [isEditingPassword, setIsEditingPassword] = useState(false);
   const [editedPassword, setEditedPassword] = useState("");
 
-  const getUser1 = async () => {
-    const response = await axios.get(
-      `http://localhost:5005/api/user/${user._id}`
+  const changeUser1 = async (chan) => {
+    console.log(chan);
+    const newName = {
+      name: chan.name,
+    };
+    const response = await axios.put(
+      `http://localhost:5005/api/user/${user._id}`,
+      newName
     );
-    setUser1(response.data);
+    setUser(response.data);
+    console.log(response);
   };
 
   const handleEditNameClick = () => {
@@ -29,6 +41,7 @@ const ProfilePage = () => {
   const handleSaveNameClick = () => {
     setUser({ ...user, name: editedName });
     setIsEditing(false);
+    changeUser({ ...user, name: editedName });
   };
 
   const handleEditEmailClick = () => {
@@ -38,6 +51,8 @@ const ProfilePage = () => {
   const handleSaveEmailClick = () => {
     setUser({ ...user, email: editedEmail });
     setIsEditingEmail(false);
+    changeUser1({ ...user, email: editedEmail });
+    changeUser();
   };
 
   const handleEditPasswordClick = () => {
@@ -72,11 +87,24 @@ const ProfilePage = () => {
           </>
         )}
 
-        <p>Email: {editedEmail} </p>
         {isEditingEmail ? (
-          <button onClick={handleEditEmailClick}>Edit Email</button>
+          <>
+            <label htmlFor="email">Name:</label>
+            <input
+              type="email"
+              name="email"
+              value={editedEmail}
+              onChange={(e) => {
+                setEditedEmail(e.target.value);
+              }}
+            />
+            <button onClick={handleSaveEmailClick}>Save</button>
+          </>
         ) : (
-          <button onClick={handleSaveEmailClick}>Save</button>
+          <>
+            <p>Email: {user ? user.email : ""} </p>
+            <button onClick={handleEditEmailClick}>Edit Email</button>
+          </>
         )}
       </div>
     </div>

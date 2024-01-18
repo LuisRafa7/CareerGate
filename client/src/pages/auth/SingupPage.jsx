@@ -28,6 +28,23 @@ function SignupPage(props) {
       });
   };
 
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    const requestBody = { email, password };
+
+    axios
+      .post(`${API_URL}/auth/login`, requestBody)
+      .then((response) => {
+        storeToken(response.data.authToken);
+        authenticateUser();
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
+      });
+  };
+
   return (
     <div className="SignupPage">
       <h1>Sign Up</h1>

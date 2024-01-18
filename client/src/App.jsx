@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import SignupPage from "./pages/auth/SingupPage";
 import LoginPage from "./pages/auth/LoginPage";
 import ProfilePage from "./pages/auth/ProfilePage";
+import CreateCV from "./pages/CreateCV";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/createCV" element={<CreateCV />} />
       </Routes>
     </>
   );
