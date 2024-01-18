@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/auth.context";
+import axios from 'axios';
 
 const ProfilePage = () => {
   const { user, setUser } = useContext(AuthContext);
 
-  const { user1, setUser1 } = useState();
+  const [user1, setUser1] = useState();
   const [isEditing, setIsEditing] = useState(false);
   const [editedName, setEditedName] = useState(user ? user.name : "");
 
@@ -66,7 +67,7 @@ const ProfilePage = () => {
           </>
         ) : (
           <>
-            <p>Name: {editedName} </p>
+            <p>Name: {user ? user.name : ""} </p>
             <button onClick={handleEditNameClick}>Edit Name</button>
           </>
         )}
