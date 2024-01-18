@@ -2,22 +2,31 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/auth.context";
 
 const ProfilePage = () => {
-  const { user, updateUser } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
+
+  const { user1, setUser1 } = useState();
   const [isEditing, setIsEditing] = useState(false);
-  const [editedName, setEditedName] = useState(user ? user.name : '');
+  const [editedName, setEditedName] = useState(user ? user.name : "");
 
   const [isEditingEmail, setIsEditingEmail] = useState(false);
-  const [editedEmail, setEditedEmail] = useState(user ? user.email : '');
+  const [editedEmail, setEditedEmail] = useState(user ? user.email : "");
 
   const [isEditingPassword, setIsEditingPassword] = useState(false);
-  const [editedPassword, setEditedPassword] = useState('');
+  const [editedPassword, setEditedPassword] = useState("");
+
+  const getUser1 = async () => {
+    const response = await axios.get(
+      `http://localhost:5005/api/user/${user._id}`
+    );
+    setUser1(response.data);
+  };
 
   const handleEditNameClick = () => {
     setIsEditing(true);
   };
 
   const handleSaveNameClick = () => {
-    updateUser({ ...user, name: editedName });
+    setUser({ ...user, name: editedName });
     setIsEditing(false);
   };
 
@@ -26,7 +35,7 @@ const ProfilePage = () => {
   };
 
   const handleSaveEmailClick = () => {
-    updateUser({ ...user, email: editedEmail });
+    setUser({ ...user, email: editedEmail });
     setIsEditingEmail(false);
   };
 
@@ -38,20 +47,39 @@ const ProfilePage = () => {
     setIsEditingPassword(false);
   };
 
-    return (
+  return (
+    <div>
+      <h1>Profile Page</h1>
       <div>
-        <h1>Profile Page</h1>
-        <div>
-          <p>Name: {user.name} </p>
-          <button onClick={handleEditNameClick}>Edit Name</button>
-          <button onClick={handleSaveNameClick}>Save</button>
-          <p>Email: {user.email} </p>
-          <button onClick={handleEditEmailClick}>Edit Email</button>
-          <button onClick={handleSaveEmailClick}>Save</button>
-        </div>
-      </div>
-    );
-  }
+        {isEditing ? (
+          <>
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              value={editedName}
+              onChange={(e) => {
+                setEditedName(e.target.value);
+              }}
+            />
+            <button onClick={handleSaveNameClick}>Save</button>
+          </>
+        ) : (
+          <>
+            <p>Name: {editedName} </p>
+            <button onClick={handleEditNameClick}>Edit Name</button>
+          </>
+        )}
 
+        <p>Email: {editedEmail} </p>
+        {isEditingEmail ? (
+          <button onClick={handleEditEmailClick}>Edit Email</button>
+        ) : (
+          <button onClick={handleSaveEmailClick}>Save</button>
+        )}
+      </div>
+    </div>
+  );
+};
 
 export default ProfilePage;
