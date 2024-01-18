@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 function Experience() {
   const [experienceArray, setExperienceArray] = useState([]);
-  const [experience, setExperience] = useState([]);
   const [profession, setProfession] = useState();
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
@@ -17,18 +16,20 @@ function Experience() {
       endDate: endDate,
       tasks: tasks,
       city: city,
-      country: country
+      country: country,
     };
-  
+
     setExperienceArray([...experienceArray, newExperience]);
   };
 
   return (
     <>
-      <form onSubmit={(e) => {
-    e.preventDefault();
-    handleSubmit();
-  }}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit();
+        }}
+      >
         <label htmlFor="profession">Profession:</label>
         <input
           type="text"
@@ -45,7 +46,7 @@ function Experience() {
             setStartDate(e.target.value);
           }}
         />
-         <label htmlFor="endDate">End Date:</label>
+        <label htmlFor="endDate">End Date:</label>
         <input
           type="text"
           name="text"
@@ -53,7 +54,7 @@ function Experience() {
             setEndDate(e.target.value);
           }}
         />
-          <label htmlFor="tasks">Tasks:</label>
+        <label htmlFor="tasks">Tasks:</label>
         <input
           type="text"
           name="text"
@@ -61,7 +62,7 @@ function Experience() {
             setTasks(e.target.value);
           }}
         />
-         <label htmlFor="city">City:</label>
+        <label htmlFor="city">City:</label>
         <input
           type="text"
           name="text"
@@ -69,7 +70,7 @@ function Experience() {
             setCity(e.target.value);
           }}
         />
-         <label htmlFor="country">Country:</label>
+        <label htmlFor="country">Country:</label>
         <input
           type="text"
           name="text"
