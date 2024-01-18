@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 
-function Experience() {
-  const [experienceArray, setExperienceArray] = useState([]);
-  const [profession, setProfession] = useState();
-  const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState();
-  const [tasks, setTasks] = useState();
-  const [city, setCity] = useState();
-  const [country, setCountry] = useState();
+function Education() {
+    const [educationArray, setEducationArray] = useState([]);
+    const [school, setSchool] = useState();
+    const [startDate, setStartDate] = useState();
+    const [endDate, setEndDate] = useState();
+    const [degree, setDegree] = useState();
+    const [city, setCity] = useState();
+    const [country, setCountry] = useState();
 
-  const handleSubmit = () => {
-    const newExperience = {
-      profession: profession,
-      startDate: startDate,
-      endDate: endDate,
-      tasks: tasks,
-      city: city,
-      country: country
-    };
-  
-    setExperienceArray([...experienceArray, newExperience]);
+    const handleSubmit = () => {
+        const newEducation = {
+          school: school,
+          startDate: startDate,
+          endDate: endDate,
+          degree: degree,
+          city: city,
+          country: country
+        };
+
+        setEducationArray([...educationArray, newEducation]);
   };
 
   return (
@@ -28,12 +28,12 @@ function Experience() {
     e.preventDefault();
     handleSubmit();
    }}>
-        <label htmlFor="profession">Profession:</label>
+        <label htmlFor="school">School:</label>
         <input
           type="text"
           name="text"
           onChange={(e) => {
-            setProfession(e.target.value);
+            setSchool(e.target.value);
           }}
         />
         <label htmlFor="startDate">Start Date:</label>
@@ -52,12 +52,12 @@ function Experience() {
             setEndDate(e.target.value);
           }}
         />
-          <label htmlFor="tasks">Tasks:</label>
+          <label htmlFor="degree">Degree:</label>
         <input
           type="text"
           name="text"
           onChange={(e) => {
-            setTasks(e.target.value);
+            setDegree(e.target.value);
           }}
         />
          <label htmlFor="city">City:</label>
@@ -82,4 +82,4 @@ function Experience() {
   );
 }
 
-export default Experience;
+export default Education;
