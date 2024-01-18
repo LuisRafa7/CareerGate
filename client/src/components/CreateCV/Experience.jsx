@@ -16,18 +16,27 @@ function Experience() {
       endDate: endDate,
       tasks: tasks,
       city: city,
-      country: country
+      country: country,
     };
-  
+
     setExperienceArray([...experienceArray, newExperience]);
   };
 
   return (
     <>
+<<<<<<< HEAD
       <form onSubmit={(e) => {
     e.preventDefault();
     handleSubmit();
    }}>
+=======
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit();
+        }}
+      >
+>>>>>>> 2ce9d2e195f0f498f5346dd884af92f6f3b539ed
         <label htmlFor="profession">Profession:</label>
         <input
           type="text"
@@ -44,7 +53,7 @@ function Experience() {
             setStartDate(e.target.value);
           }}
         />
-         <label htmlFor="endDate">End Date:</label>
+        <label htmlFor="endDate">End Date:</label>
         <input
           type="text"
           name="text"
@@ -52,7 +61,7 @@ function Experience() {
             setEndDate(e.target.value);
           }}
         />
-          <label htmlFor="tasks">Tasks:</label>
+        <label htmlFor="tasks">Tasks:</label>
         <input
           type="text"
           name="text"
@@ -60,7 +69,7 @@ function Experience() {
             setTasks(e.target.value);
           }}
         />
-         <label htmlFor="city">City:</label>
+        <label htmlFor="city">City:</label>
         <input
           type="text"
           name="text"
@@ -68,7 +77,7 @@ function Experience() {
             setCity(e.target.value);
           }}
         />
-         <label htmlFor="country">Country:</label>
+        <label htmlFor="country">Country:</label>
         <input
           type="text"
           name="text"
