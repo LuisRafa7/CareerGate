@@ -31,7 +31,7 @@ function Education() {
         <label htmlFor="school">School:</label>
         <input
           type="text"
-          name="text"
+          name="school"
           onChange={(e) => {
             setSchool(e.target.value);
           }}
@@ -39,7 +39,7 @@ function Education() {
         <label htmlFor="startDate">Start Date:</label>
         <input
           type="date"
-          name="date"
+          name="startDate"
           onChange={(e) => {
             setStartDate(e.target.value);
           }}
@@ -47,7 +47,7 @@ function Education() {
          <label htmlFor="endDate">End Date:</label>
         <input
           type="text"
-          name="text"
+          name="endDate"
           onChange={(e) => {
             setEndDate(e.target.value);
           }}
@@ -55,7 +55,7 @@ function Education() {
           <label htmlFor="degree">Degree:</label>
         <input
           type="text"
-          name="text"
+          name="degree"
           onChange={(e) => {
             setDegree(e.target.value);
           }}
@@ -63,7 +63,7 @@ function Education() {
          <label htmlFor="city">City:</label>
         <input
           type="text"
-          name="text"
+          name="city"
           onChange={(e) => {
             setCity(e.target.value);
           }}
@@ -71,7 +71,7 @@ function Education() {
          <label htmlFor="country">Country:</label>
         <input
           type="text"
-          name="text"
+          name="country"
           onChange={(e) => {
             setCountry(e.target.value);
           }}

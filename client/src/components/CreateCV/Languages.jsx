@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Language() {
+function Languages() {
     const [languageArray, setLanguageArray] = useState([]);
     const [level, setLevel] = useState();
     const [language, setLanguage] = useState();
@@ -22,7 +22,7 @@ function Language() {
         <label htmlFor="level">Level:</label>
         <input
           type="text"
-          name="text"
+          name="level"
           onChange={(e) => {
             setLevel(e.target.value);
           }}
@@ -30,7 +30,7 @@ function Language() {
         <label htmlFor="language">Language:</label>
         <input
           type="text"
-          name="text"
+          name="language"
           onChange={(e) => {
             setLanguage(e.target.value);
           }}
@@ -41,4 +41,4 @@ function Language() {
   );
 }
 
-export default Language;
+export default Languages;

@@ -23,7 +23,7 @@ const curriculumVitaeSchema = new Schema(
         country: { type: String },
       },
     ],
-    language: [
+    languages: [
       {
         level: { type: String },
         language: { type: String },
@@ -31,7 +31,7 @@ const curriculumVitaeSchema = new Schema(
     ],
     skills: [
       {
-        type: String,
+        skill: { type: String },
       },
     ],
   },

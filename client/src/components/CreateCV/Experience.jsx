@@ -31,7 +31,7 @@ function Experience() {
         <label htmlFor="profession">Profession:</label>
         <input
           type="text"
-          name="text"
+          name="profession"
           onChange={(e) => {
             setProfession(e.target.value);
           }}
@@ -39,7 +39,7 @@ function Experience() {
         <label htmlFor="startDate">Start Date:</label>
         <input
           type="date"
-          name="date"
+          name="startDate"
           onChange={(e) => {
             setStartDate(e.target.value);
           }}
@@ -47,7 +47,7 @@ function Experience() {
         <label htmlFor="endDate">End Date:</label>
         <input
           type="text"
-          name="text"
+          name="endDate"
           onChange={(e) => {
             setEndDate(e.target.value);
           }}
@@ -55,7 +55,7 @@ function Experience() {
         <label htmlFor="tasks">Tasks:</label>
         <input
           type="text"
-          name="text"
+          name="tasks"
           onChange={(e) => {
             setTasks(e.target.value);
           }}
@@ -63,7 +63,7 @@ function Experience() {
         <label htmlFor="city">City:</label>
         <input
           type="text"
-          name="text"
+          name="city"
           onChange={(e) => {
             setCity(e.target.value);
           }}
@@ -71,7 +71,7 @@ function Experience() {
         <label htmlFor="country">Country:</label>
         <input
           type="text"
-          name="text"
+          name="country"
           onChange={(e) => {
             setCountry(e.target.value);
           }}
