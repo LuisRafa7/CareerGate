@@ -77,4 +77,31 @@ router.get("/verify", isAuthenticated, async (req, res, next) => {
   }
 });
 
+router.post("/changePassword", async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+
+    if (email === "" || password === "") {
+      res.status(400).json({ message: "Provide email and password" });
+    }
+
+    const salt = bcrypt.genSaltSync(10);
+    const hashedPassword = bcrypt.hashSync(password, salt);
+    const createUser = await User.findOneAndUpdate(
+      { email },
+      {
+        password: hashedPassword,
+      }
+    );
+    if (createUser) {
+      const { email, name, _id } = createUser;
+      const user = { email, name, _id };
+      res.status(201).json({ user: user });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
 module.exports = router;
