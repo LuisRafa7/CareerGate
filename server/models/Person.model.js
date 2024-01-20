@@ -29,6 +29,7 @@ const personSchema = new Schema(
       type: String,
     },
     curriculumVitae: [{ type: Schema.Types.ObjectId, ref: "CurriculumVitae" }],
+    user: { type: Schema.Types.ObjectId, ref: "User" },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

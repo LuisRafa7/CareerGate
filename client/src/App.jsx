@@ -8,6 +8,8 @@ import SignupPage from "./pages/auth/SingupPage";
 import LoginPage from "./pages/auth/LoginPage";
 import ProfilePage from "./pages/auth/ProfilePage";
 import CreateCV from "./pages/CreateCV";
+import Homepage from "./pages/Homepage";
+import PersonPage from "./pages/PersonPage";
 
 function App() {
   return (
@@ -15,9 +17,11 @@ function App() {
       <Navbar />
 
       <Routes>
+        <Route path="/" element={<Homepage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/person" element={<PersonPage />} />
         <Route path="/createCV" element={<CreateCV />} />
       </Routes>
     </>
