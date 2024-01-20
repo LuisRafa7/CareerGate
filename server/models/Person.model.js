@@ -28,7 +28,7 @@ const personSchema = new Schema(
     image: {
       type: String,
     },
-    curriculumVitae: [{ type: Schema.Types.ObjectId, ref: "CurriculumVitae" }],
+    curriculumVitae: { type: Schema.Types.ObjectId, ref: "CurriculumVitae" },
     user: { type: Schema.Types.ObjectId, ref: "User" },
   },
   {

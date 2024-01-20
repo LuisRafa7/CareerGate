@@ -28,7 +28,7 @@ function CreateCV() {
 
   return (
     <div>
-      CreateCV
+      <h1>Create your CV</h1>
       {number === 0 && (
         <Person setNumber={setNumber} person={person} setPerson={setPerson} />
       )}
