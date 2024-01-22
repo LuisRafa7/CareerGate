@@ -7,6 +7,10 @@ import Skills from "../components/CreateCV/Skills";
 import axios from "axios";
 import PropTypes from "prop-types";
 
+CreateCV.propTypes = {
+  getPerson: PropTypes.func.isRequired,
+};
+ 
 function CreateCV({ getPerson }) {
   const [number, setNumber] = useState(0);
   const [person, setPerson] = useState({
@@ -30,10 +34,7 @@ function CreateCV({ getPerson }) {
     });
     getPerson();
   };
-  
-  CreateCV.propTypes = {
-    getPerson: PropTypes.func.isRequired,
-  };
+
   
   return (
     <div>
