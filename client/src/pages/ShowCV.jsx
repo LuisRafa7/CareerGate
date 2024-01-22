@@ -4,8 +4,8 @@ import axios from "axios";
 import CreateCV from "./CreateCV";
 
 function ShowCV() {
-  const [person, setPerson] = useState();
-  const [curriculum, setCurriculum] = useState();
+  const [person, setPerson] = useState({});
+  const [curriculum, setCurriculum] = useState({});
   let { personId } = useParams();
 
   useEffect(() => {
@@ -13,29 +13,24 @@ function ShowCV() {
   }, []);
 
   const getPerson = async () => {
-    const response = await axios.get(
-      `http://localhost:5005/api/person/${personId}`
-    );
-    setPerson(response.data);
-    setCurriculum(response.data.curriculumVitae);
-    console.log(response.data);
-    console.log(response.data.curriculumVitae);
+    try {
+      const response = await axios.get(
+        `http://localhost:5005/api/person/${personId}`
+      );
+      setPerson(response.data);
+      setCurriculum(response.data.curriculumVitae);
+      console.log(response.data);
+      console.log(response.data.curriculumVitae);
+    } catch (error) {
+      console.error("Error fetching person:", error);
+    }
   };
-
   return (
     <>
       <div>ShowCV</div>
-      {person && (
-        <>
-          <h1>person inf</h1>
-          <p>Name: {person.name}</p>
-        </>
-      )}
-      {curriculum && curriculum.data ? (
-        <p>Curriculum</p>
-      ) : (
-        <CreateCV getPerson={getPerson} />
-      )}
+      <h1>person inf</h1>
+      <p>Name:</p>
+      {curriculum ? <p>Curriculum</p> : <CreateCV />}
     </>
   );
 }
