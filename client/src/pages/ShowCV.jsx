@@ -13,6 +13,7 @@ function ShowCV() {
   }, []);
 
   const getPerson = async () => {
+    try {
     const response = await axios.get(
       `http://localhost:5005/api/person/${personId}`
     );
@@ -20,8 +21,10 @@ function ShowCV() {
     setCurriculum(response.data.curriculumVitae);
     console.log(response.data);
     console.log(response.data.curriculumVitae);
-  };
-
+  } catch (error) {
+    console.error("Error fetching person:", error);
+  }
+};
   return (
     <>
       <div>ShowCV</div>
