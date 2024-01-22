@@ -4,8 +4,8 @@ import axios from "axios";
 import CreateCV from "./CreateCV";
 
 function ShowCV() {
-  const [person, setPerson] = useState();
-  const [curriculum, setCurriculum] = useState();
+  const [person, setPerson] = useState({});
+  const [curriculum, setCurriculum] = useState({});
   let { personId } = useParams();
 
   useEffect(() => {
@@ -28,8 +28,7 @@ function ShowCV() {
   return (
     <>
       <div>ShowCV</div>
-      <h1>person inf</h1>
-      <p>Name:</p>
+      <p>Name: {person.name}</p>
       {curriculum && curriculum.data ? <p>Curriculum</p> : <CreateCV />}
     </>
   );
