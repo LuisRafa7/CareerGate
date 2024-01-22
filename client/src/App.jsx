@@ -24,6 +24,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/person" element={<PersonPage />} />
         <Route path="/person/CV/:personId" element={<ShowCV />} />
+        <Route path="/person/createCV" element={<CreateCV />} />
       </Routes>
     </>
   );

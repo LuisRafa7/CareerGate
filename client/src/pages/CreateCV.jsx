@@ -4,6 +4,7 @@ import Experience from "../components/CreateCV/Experience";
 import Education from "../components/CreateCV/Education";
 import Languages from "../components/CreateCV/Languages";
 import Skills from "../components/CreateCV/Skills";
+import axios from "axios";
 
 function CreateCV() {
   const [number, setNumber] = useState(0);
@@ -23,7 +24,10 @@ function CreateCV() {
       `http://localhost:5005/api/person`,
       person
     );
-    const response1 = await axios.post(`http://localhost:5005/api/person`);
+    const response1 = await axios.post(
+      `http://localhost:5005/api/curriculumVitae`,
+      curriculumVitae
+    );
   };
 
   return (
@@ -58,6 +62,7 @@ function CreateCV() {
           setNumber={setNumber}
           curriculumVitae={curriculumVitae}
           setCurriculumVitae={setCurriculumVitae}
+          submit={submit}
         />
       )}
     </div>

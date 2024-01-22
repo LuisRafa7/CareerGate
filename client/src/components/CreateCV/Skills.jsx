@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-function Skills({ setNumber, curriculumVitae, setCurriculumVitae }) {
+function Skills({ setNumber, curriculumVitae, setCurriculumVitae, submit }) {
   const [skillsArray, setSkillsArray] = useState(
     curriculumVitae.skills ? curriculumVitae.skills : []
   );
@@ -38,6 +38,7 @@ function Skills({ setNumber, curriculumVitae, setCurriculumVitae }) {
   const handleConfirm = () => {
     setNumber(0);
     setCurriculumVitae({ ...curriculumVitae, skills: skillsArray });
+    submit();
   };
 
   return (

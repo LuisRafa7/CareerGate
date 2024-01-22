@@ -12,7 +12,9 @@ router.get("/", async (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   try {
-    const response = await Person.findById(req.params.id);
+    const response = await Person.findById(req.params.id).populate(
+      "curriculumVitae"
+    );
     res.json(response);
   } catch (error) {
     res.json({ status: 400, msg: error.message });
