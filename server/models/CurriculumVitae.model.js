@@ -5,6 +5,7 @@ const curriculumVitaeSchema = new Schema(
   {
     experience: [
       {
+        id: { type: String },
         profession: { type: String },
         startDate: { type: Date },
         endDate: { type: String },
@@ -15,6 +16,7 @@ const curriculumVitaeSchema = new Schema(
     ],
     education: [
       {
+        id: { type: String },
         school: { type: String },
         startDate: { type: Date },
         endDate: { type: String },
@@ -25,12 +27,14 @@ const curriculumVitaeSchema = new Schema(
     ],
     languages: [
       {
+        id: { type: String },
         level: { type: String },
         language: { type: String },
       },
     ],
     skills: [
       {
+        id: { type: String },
         skill: { type: String },
       },
     ],

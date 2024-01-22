@@ -5,7 +5,6 @@ const personSchema = new Schema(
   {
     name: {
       type: String,
-      required: true,
     },
     address: {
       type: String,

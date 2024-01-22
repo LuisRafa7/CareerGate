@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const CurriculumVitae = require("../models/Person.model");
+const CurriculumVitae = require("../models/CurriculumVitae.model");
 
 router.get("/", async (req, res, next) => {
   try {

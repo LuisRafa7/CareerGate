@@ -25,9 +25,17 @@ function ShowCV() {
   return (
     <>
       <div>ShowCV</div>
-      <h1>person inf</h1>
-      <p>Name:</p>
-      {curriculum ? <p>Curriculum</p> : <CreateCV />}
+      {person && (
+        <>
+          <h1>person inf</h1>
+          <p>Name: {person.name}</p>
+        </>
+      )}
+      {curriculum && curriculum.data ? (
+        <p>Curriculum</p>
+      ) : (
+        <CreateCV getPerson={getPerson} />
+      )}
     </>
   );
 }
