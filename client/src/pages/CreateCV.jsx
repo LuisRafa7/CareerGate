@@ -5,6 +5,7 @@ import Education from "../components/CreateCV/Education";
 import Languages from "../components/CreateCV/Languages";
 import Skills from "../components/CreateCV/Skills";
 import axios from "axios";
+import PropTypes from "prop-types";
 
 function CreateCV({ getPerson }) {
   const [number, setNumber] = useState(0);
@@ -29,7 +30,11 @@ function CreateCV({ getPerson }) {
     });
     getPerson();
   };
-
+  
+  CreateCV.propTypes = {
+    getPerson: PropTypes.func.isRequired,
+  };
+  
   return (
     <div>
       <h1>Create your CV</h1>
