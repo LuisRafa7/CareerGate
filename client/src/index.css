@@ -1,3 +1,4 @@
+ /*homepage and navbar*/
 .careergate {
     font-family:fantasy;
     font-size: 120px;
@@ -91,4 +92,56 @@
 .button-homepage {
   padding: 30px 60px;
   font-size: 25px;
+}
+
+ /*signup*/
+
+.signupPageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
+}
+
+.signupPage {
+    text-align: center;
+}
+
+.button-signup {
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+.button-login {
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+.title-signup {
+    font-family:fantasy;
+    font-size: 80px;
+}
+
+.label-signup {
+    font-size: 40px;
+    font-family:"Gill Sans", sans-serif;
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+.inputsignup {
+    width: 300px;
+    height: 40px;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 6px;
+}
+  
+.right {
+   transform: rotate(-45deg);
+   -webkit-transform: rotate(-45deg);
 }

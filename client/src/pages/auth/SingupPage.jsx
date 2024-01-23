@@ -29,12 +29,13 @@ function SignupPage(props) {
   };
 
   return (
-    <div className="SignupPage">
-      <h1>Sign Up</h1>
+    <div className="signupPageContainer">
+    <div className="signupPage">
+      <h1 className="title-signup">Sign Up</h1>
 
       <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input
+        <label className="label-signup">Email<i class="arrow right"></i></label>
+        <input className="inputsignup"
           type="email"
           name="email"
           value={email}
@@ -43,8 +44,8 @@ function SignupPage(props) {
           }}
         />
 
-        <label>Password:</label>
-        <input
+        <label className="label-signup">Password<i class="arrow right"></i></label>
+        <input className="inputsignup"
           type="password"
           name="password"
           value={password}
@@ -53,8 +54,8 @@ function SignupPage(props) {
           }}
         />
 
-        <label>Name:</label>
-        <input
+        <label className="label-signup">Name<i class="arrow right"></i></label>
+        <input className="inputsignup"
           type="text"
           name="name"
           value={name}
@@ -63,14 +64,18 @@ function SignupPage(props) {
           }}
         />
 
-        <button type="submit">Sign Up</button>
+        <button className="button button-signup" type="submit">Sign Up</button>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+      <Link to="/login" className="nav-link">
+            {" "}
+            <button className="button button-login">Login</button>{" "}
+      </Link>
     </div>
+  </div>
   );
 }
 
