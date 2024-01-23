@@ -36,9 +36,8 @@ function Skills({ setNumber, curriculumVitae, setCurriculumVitae, submit }) {
   };
 
   const handleConfirm = () => {
-    setNumber(0);
+    setNumber(5);
     setCurriculumVitae({ ...curriculumVitae, skills: skillsArray });
-    submit();
   };
 
   return (

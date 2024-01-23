@@ -5,6 +5,7 @@ import Education from "../components/CreateCV/Education";
 import Languages from "../components/CreateCV/Languages";
 import Skills from "../components/CreateCV/Skills";
 import axios from "axios";
+import Confirm from "../components/CreateCV/Confirm";
 
 function CreateCV({ getPerson, person123 }) {
   const [number, setNumber] = useState(0);
@@ -62,6 +63,13 @@ function CreateCV({ getPerson, person123 }) {
       )}
       {number === 4 && (
         <Skills
+          setNumber={setNumber}
+          curriculumVitae={curriculumVitae}
+          setCurriculumVitae={setCurriculumVitae}
+        />
+      )}
+      {number === 5 && (
+        <Confirm
           setNumber={setNumber}
           curriculumVitae={curriculumVitae}
           setCurriculumVitae={setCurriculumVitae}
