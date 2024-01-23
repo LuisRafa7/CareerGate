@@ -6,7 +6,7 @@ import { AuthContext } from "../context/auth.context";
 function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   return (
-    <nav style={{backgroundColor: "#f0f0f0", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px", maxHeight: "200px"}}>
+    <nav style={{backgroundColor: "#f0f0f0", display: "flex", justifyContent: "space-between", alignItems: "center", padding:"10px", maxHeight: "150px"}}>
       <h1 className="careergate">CAREERGATE</h1>
       <div style={{ display: "flex", gap: "70px" }}>
       <Link to="/" className="nav-link">
