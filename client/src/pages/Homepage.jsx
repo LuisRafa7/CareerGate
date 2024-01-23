@@ -4,13 +4,15 @@ import { useNavigate } from "react-router-dom";
 function Homepage() {
   const navigate = useNavigate();
   return (
-    <button
+    <div className="center-button">
+    <button className="button button-homepage"
       onClick={() => {
         navigate("/person");
       }}
     >
-      Do your CV
+      Create your CV
     </button>
+    </div>
   );
 }
 

@@ -1,14 +1,21 @@
 .careergate {
     font-family:fantasy;
-    font-size: 90px;
+    font-size: 120px;
 }
 
-.nav-button {
-    margin-left: 10px;
+.nav-link {
+    text-decoration: none;
+}
+
+#my-button {
+    padding: 20px 40px;
+    font-size: 25px;
 }
 
 .button {
   all: unset;
+  font-family: fantasy;
+  font-weight: lighter;
   width: 100px;
   height: 30px;
   font-size: 16px;
@@ -72,4 +79,16 @@
 .button:active::after {
   transition: 0s;
   transform: translate(0, 5%);
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.button-homepage {
+  padding: 30px 60px;
+  font-size: 25px;
 }

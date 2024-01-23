@@ -7,34 +7,36 @@ import { AuthContext } from "../context/auth.context";
 function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   return (
-    <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+    <nav style={{backgroundColor: "#f0f0f0", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px", maxHeight: "200px"}}>
       <h1 className="careergate">CAREERGATE</h1>
-      <Link to="/">
-        <button className="btn-navbar button">Home</button>
+      <div style={{ display: "flex", gap: "70px" }}>
+      <Link to="/" className="nav-link">
+        <button id="my-button" className="button">Home</button>
       </Link>
 
       {isLoggedIn && (
         <>
-          <Link to="/profile">
-            <button className="btn-navbar button">Profile</button>
+          <Link to="/profile" className="nav-link">
+            <button id="my-button" className="button">Profile</button>
           </Link>
-          <button onClick={logOutUser} className="nav-button button">Logout</button>
+          <button onClick={logOutUser} id="my-button" className="button">Logout</button>
           <span>{user && user.name}</span>
         </>
       )}
 
       {!isLoggedIn && (
         <>
-          <Link to="/signup">
+          <Link to="/signup" className="nav-link">
             {" "}
-            <button className="nav-button button">Sign Up</button>{" "}
+            <button id="my-button" className="button">Sign Up</button>{" "}
           </Link>
-          <Link to="/login">
+          <Link to="/login" className="nav-link">
             {" "}
-            <button className="nav-button button">Login</button>{" "}
+            <button id="my-button" className="button">Login</button>{" "}
           </Link>
         </>
       )}
+      </div>
     </nav>
   );
 }
