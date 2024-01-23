@@ -27,19 +27,23 @@ function ShowCV() {
   return (
     <>
       <div>ShowCV</div>
-      {person123 && (
+      {curriculum ? (
         <>
-          <h1>person inf</h1>
-          <p>Name: {person123.name}</p>
-        </>
-      )}
-      <p>Curriculum</p>
-      {curriculum.experience ? (
-        <>
-          <h2>Experience</h2>
-          {curriculum.experience.map((one) => {
-            return <h4>Title: {one.profession}</h4>;
-          })}
+          {person123 && (
+            <>
+              <h1>person inf</h1>
+              <p>Name: {person123.name}</p>
+            </>
+          )}
+          <p>Curriculum</p>
+          {curriculum.experience && (
+            <>
+              <h2>Experience</h2>
+              {curriculum.experience.map((one) => {
+                return <h4>Title: {one.profession}</h4>;
+              })}
+            </>
+          )}
         </>
       ) : (
         <CreateCV getPerson={getPerson} person123={person123} />
