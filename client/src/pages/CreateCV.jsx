@@ -6,7 +6,7 @@ import Languages from "../components/CreateCV/Languages";
 import Skills from "../components/CreateCV/Skills";
 import axios from "axios";
 
-function CreateCV({ getPerson, person123 }) {
+function CreateCV({ getPerson }) {
   const [number, setNumber] = useState(0);
   const [person, setPerson] = useState({
     name: "",
