@@ -6,7 +6,7 @@ import Languages from "../components/CreateCV/Languages";
 import Skills from "../components/CreateCV/Skills";
 import axios from "axios";
 
-function CreateCV({ getPerson }) {
+function CreateCV({ getPerson, person123 }) {
   const [number, setNumber] = useState(0);
   const [person, setPerson] = useState({
     name: "",
@@ -24,9 +24,12 @@ function CreateCV({ getPerson }) {
       `http://localhost:5005/api/curriculumVitae`,
       curriculumVitae
     );
-    const response1 = await axios.post(`http://localhost:5005/api/person`, {
-      curriculumVitae: response.data._id,
-    });
+    const response1 = await axios.put(
+      `http://localhost:5005/api/person/${person123._id}`,
+      {
+        curriculumVitae: response.data._id,
+      }
+    );
     getPerson();
   };
 
