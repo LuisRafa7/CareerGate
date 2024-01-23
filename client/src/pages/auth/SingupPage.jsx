@@ -29,7 +29,7 @@ function SignupPage(props) {
   };
 
   return (
-    <div className="signupPageContainer">
+    <div className="signupPageContainer" style={{ backgroundImage: `url(/images/image.jpg)` }}>
     <div className="signupPage">
       <h1 className="title-signup">Sign Up</h1>
 
@@ -69,7 +69,7 @@ function SignupPage(props) {
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Already have account?</p>
+      <p className="p-signup">Already have account?</p>
       <Link to="/login" className="nav-link">
             {" "}
             <button className="button button-login">Login</button>{" "}
