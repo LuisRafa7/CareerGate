@@ -241,3 +241,16 @@
   transform: translate(0, 5%);
 }
 
+.classbutton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#buttonId {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

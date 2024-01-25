@@ -186,7 +186,7 @@ const ProfilePage = () => {
       <div className="signupPage" style={{ border: '8px solid black', paddingRight: '90px', paddingLeft: '90px', paddingTop: '110px', paddingBottom: '110px',
       backdropFilter: 'blur(3px)',backgroundColor: 'rgba(255, 255, 255, 0.3)'}}>
       <h1 className="profilepageh1">Profile Page</h1>
-      <div>
+      <div id="buttonId">
         {isEditing ? (
           <>
             <label htmlFor="name">Name:</label>
@@ -243,7 +243,7 @@ const ProfilePage = () => {
         ) : (
           <>
             <p className="profile-p">Email <i className="arrow1 right1"></i> {user ? user.email : ""} </p>
-            <button onClick={handleEditEmailClick} className="button3" style={{ marginRight: '20px' }}>Edit Email</button>
+            <button onClick={handleEditEmailClick} className="button3 classbutton">Edit Email</button>
           </>
         )}
 
@@ -271,7 +271,7 @@ const ProfilePage = () => {
           </>
         ) : (
           <>
-            <button onClick={handleEditPasswordClick} className="button3" style={{ marginRight: '20px' }}>Change Password</button>
+            <button onClick={handleEditPasswordClick} className="button3 classbutton">Change Password</button>
           </>
         )}
 
