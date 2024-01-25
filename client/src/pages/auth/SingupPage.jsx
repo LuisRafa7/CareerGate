@@ -36,8 +36,8 @@ function SignupPage(props) {
 
       <form onSubmit={handleSignupSubmit} style={{ display: 'flex', flexDirection: 'row', gap: '30px' }}>
         <label className="label-signup">Email<i className="arrow right"></i></label>
-        <input className="inputsignup"
-          type="email"
+        <input className="inputsignup" style={{ fontSize: '30px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
           name="email"
           value={email}
           onChange={(e) => {
@@ -46,7 +46,8 @@ function SignupPage(props) {
         />
 
         <label className="label-signup">Password<i className="arrow right"></i></label>
-        <input className="inputsignup"
+        <input className="inputsignup" style={{ fontSize: '30px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
           type="password"
           name="password"
           value={password}
@@ -56,7 +57,8 @@ function SignupPage(props) {
         />
 
         <label className="label-signup">Name<i className="arrow right"></i></label>
-        <input className="inputsignup"
+        <input className="inputsignup" style={{ fontSize: '30px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
           type="text"
           name="name"
           value={name}

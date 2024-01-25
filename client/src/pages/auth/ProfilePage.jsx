@@ -189,8 +189,9 @@ const ProfilePage = () => {
       <div id="buttonId">
         {isEditing ? (
           <>
-            <label htmlFor="name">Name:</label>
-            <input
+            <label htmlFor="name" className="profile-p">Name:</label>
+            <input style={{ fontSize: '30px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
               type="text"
               name="name"
               value={editedName}
@@ -198,8 +199,9 @@ const ProfilePage = () => {
                 setEditedName(e.target.value);
               }}
             />
-            <label htmlFor="password">Write your password:</label>
-            <input
+            <label htmlFor="password" className="profile-p">Write your password:</label>
+            <input style={{ fontSize: '30px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
               type="password"
               name="password"
               onChange={(e) => {
@@ -219,8 +221,9 @@ const ProfilePage = () => {
 
         {isEditingEmail ? (
           <>
-            <label htmlFor="email">Name:</label>
-            <input
+            <label htmlFor="email" className="profile-p">Name:</label>
+            <input style={{ fontSize: '30px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
               type="email"
               name="email"
               value={editedEmail}
@@ -228,8 +231,9 @@ const ProfilePage = () => {
                 setEditedEmail(e.target.value);
               }}
             />
-            <label htmlFor="password">Write your password:</label>
-            <input
+            <label htmlFor="password" className="profile-p">Write your password:</label>
+            <input style={{ fontSize: '30px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
               type="password"
               name="password"
               onChange={(e) => {
@@ -249,16 +253,18 @@ const ProfilePage = () => {
 
         {isEditingPassword ? (
           <>
-            <label htmlFor="newPassword">New Password:</label>
-            <input
+            <label htmlFor="newPassword" className="profile-p">New Password:</label>
+            <input style={{ fontSize: '30px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
               type="password"
               name="newPassword"
               onChange={(e) => {
                 setEditedPassword(e.target.value);
               }}
             />
-            <label htmlFor="oldPassword">Write your old password:</label>
-            <input
+            <label htmlFor="oldPassword" className="profile-p">Write your old password:</label>
+            <input style={{ fontSize: '30px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
               type="password"
               name="oldPassword"
               onChange={(e) => {
