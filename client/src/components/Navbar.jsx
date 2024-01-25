@@ -19,7 +19,6 @@ function Navbar() {
             <button id="my-button" className="button">Profile</button>
           </Link>
           <button onClick={logOutUser} id="my-button" className="button">Logout</button>
-          <span>{user && user.name}</span>
         </>
       )}
 

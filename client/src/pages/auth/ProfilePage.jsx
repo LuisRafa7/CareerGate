@@ -181,8 +181,11 @@ const ProfilePage = () => {
   };
 
   return (
-    <div>
-      <h1>Profile Page</h1>
+    <div className="signupPageContainer" style={{ backgroundImage: `url(/images/image2.jpg)`, backgroundSize: 'cover',
+    backgroundPosition: 'center', backgroundRepeat: 'no-repeat', }}>
+      <div className="signupPage" style={{ border: '8px solid black', paddingRight: '90px', paddingLeft: '90px', paddingTop: '110px', paddingBottom: '110px',
+      backdropFilter: 'blur(3px)',backgroundColor: 'rgba(255, 255, 255, 0.3)'}}>
+      <h1 className="profilepageh1">Profile Page</h1>
       <div>
         {isEditing ? (
           <>
@@ -204,13 +207,13 @@ const ProfilePage = () => {
               }}
             />
             {errorMessage && <p>{errorMessage}</p>}
-            <button onClick={handleReturnNameClick}>Return</button>
-            <button onClick={handleSaveNameClick}>Save</button>
+            <button onClick={handleReturnNameClick} className="button3">Return</button>
+            <button onClick={handleSaveNameClick} className="button3">Save</button>
           </>
         ) : (
           <>
-            <p>Name: {user ? user.name : ""} </p>
-            <button onClick={handleEditNameClick}>Edit Name</button>
+            <p className="profile-p">Name <i className="arrow1 right1"></i> {user ? user.name : ""}</p>
+            <button onClick={handleEditNameClick} className="button3">Edit Name</button>
           </>
         )}
 
@@ -234,13 +237,13 @@ const ProfilePage = () => {
               }}
             />
             {errorMessage && <p>{errorMessage}</p>}
-            <button onClick={handleReturnEmailClick}>Return</button>
-            <button onClick={handleSaveEmailClick}>Save</button>
+            <button onClick={handleReturnEmailClick} className="button3">Return</button>
+            <button onClick={handleSaveEmailClick} className="button3">Save</button>
           </>
         ) : (
           <>
-            <p>Email: {user ? user.email : ""} </p>
-            <button onClick={handleEditEmailClick}>Edit Email</button>
+            <p className="profile-p">Email <i className="arrow1 right1"></i> {user ? user.email : ""} </p>
+            <button onClick={handleEditEmailClick} className="button3" style={{ marginRight: '20px' }}>Edit Email</button>
           </>
         )}
 
@@ -263,18 +266,19 @@ const ProfilePage = () => {
               }}
             />
             {errorMessage && <p>{errorMessage}</p>}
-            <button onClick={handleReturnPasswordClick}>Return</button>
-            <button onClick={handleSavePasswordClick}>Save</button>
+            <button onClick={handleReturnPasswordClick} className="button3">Return</button>
+            <button onClick={handleSavePasswordClick} className="button3">Save</button>
           </>
         ) : (
           <>
-            <button onClick={handleEditPasswordClick}>Change Password</button>
+            <button onClick={handleEditPasswordClick} className="button3" style={{ marginRight: '20px' }}>Change Password</button>
           </>
         )}
 
         {modalName && <ModalName toggleModal={toggleModalName} />}
         {modalEmail && <ModalEmail toggleModal={toggleModalEmail} />}
         {modalPassword && <ModalPassword toggleModal={toggleModalPassword} />}
+      </div>
       </div>
     </div>
   );

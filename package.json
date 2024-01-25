@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "install": "^0.13.0"
+    "install": "^0.13.0",
+    "mongodb": "^6.3.0"
   }
 }

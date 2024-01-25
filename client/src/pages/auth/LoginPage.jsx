@@ -38,7 +38,7 @@ function LoginPage(props) {
       <h1 className="title-signup">Login</h1>
 
       <form onSubmit={handleLoginSubmit} style={{ display: 'flex', flexDirection: 'row', gap: '30px' }}>
-        <label className="label-signup">Email:<i class="arrow right"></i></label>
+        <label className="label-signup">Email<i className="arrow right"></i></label>
         <input className="inputsignup"
           type="email"
           name="email"
@@ -48,7 +48,7 @@ function LoginPage(props) {
           }}
         />
 
-        <label className="label-signup">Password:<i class="arrow right"></i></label>
+        <label className="label-signup">Password<i className="arrow right"></i></label>
         <input className="inputsignup"
           type="password"
           name="password"
