@@ -32,12 +32,14 @@ function LoginPage(props) {
   };
 
   return (
-    <div className="LoginPage">
-      <h1>Login</h1>
+    <div className="signupPageContainer" style={{ backgroundImage: `url(/images/image.jpg)`, backgroundSize: 'cover',
+    backgroundPosition: 'center', backgroundRepeat: 'no-repeat', }}>
+    <div className="signupPage">
+      <h1 className="title-signup">Login</h1>
 
-      <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
-        <input
+      <form onSubmit={handleLoginSubmit} style={{ display: 'flex', flexDirection: 'row', gap: '30px' }}>
+        <label className="label-signup">Email:<i class="arrow right"></i></label>
+        <input className="inputsignup"
           type="email"
           name="email"
           value={email}
@@ -46,8 +48,8 @@ function LoginPage(props) {
           }}
         />
 
-        <label>Password:</label>
-        <input
+        <label className="label-signup">Password:<i class="arrow right"></i></label>
+        <input className="inputsignup"
           type="password"
           name="password"
           value={password}
@@ -56,12 +58,15 @@ function LoginPage(props) {
           }}
         />
 
-        <button type="submit">Login</button>
+        <button className="button button-signup" type="submit">Login</button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+      <p className="p-signup">Don't have an account yet?</p>
+      <Link to={"/signup"} className="nav-link"> {" "}
+            <button className="button button-login">Sign up</button>{" "}
+      </Link>
+    </div>
     </div>
   );
 }

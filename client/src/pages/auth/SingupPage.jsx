@@ -29,7 +29,8 @@ function SignupPage(props) {
   };
 
   return (
-    <div className="signupPageContainer" style={{ backgroundImage: `url(/images/image.jpg)` }}>
+    <div className="signupPageContainer" style={{ backgroundImage: `url(/images/image.jpg)`, backgroundSize: 'cover',
+    backgroundPosition: 'center', backgroundRepeat: 'no-repeat', }}>
     <div className="signupPage">
       <h1 className="title-signup">Sign Up</h1>
 
