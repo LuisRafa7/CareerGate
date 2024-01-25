@@ -1,9 +1,21 @@
  /*homepage and navbar*/
 .careergate {
     font-family:fantasy;
-    font-size: 120px;
+    font-size: 120px; 
+    animation: pulsateColor 3s ease-in-out infinite alternate;
+    transition: color 1s ease;
 }
-
+@keyframes pulsateColor {
+  0% {
+    color: #979797;
+  }
+  50% {
+    color: #3b3b3b;
+  }
+  100% {
+    color: #000000;
+  }
+}
 .nav-link {
     text-decoration: none;
 }
