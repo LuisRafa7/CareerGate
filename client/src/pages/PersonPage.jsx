@@ -53,6 +53,7 @@ function PersonPage() {
   };
 
   return (
+  <div className="container-person">
     <>
       {personArray &&
         personArray.map((one) => {
@@ -74,9 +75,10 @@ function PersonPage() {
       {createPerson ? (
         <NewPerson addPerson={addPerson} />
       ) : (
-        <button onClick={addNewPerson}>Create a New Person</button>
+        <button onClick={addNewPerson}className="button btn-person">Create a New Person</button>
       )}
     </>
+    </div>
   );
 }
 

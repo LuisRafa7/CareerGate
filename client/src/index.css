@@ -266,3 +266,17 @@
   flex-direction: column;
   justify-content: center;
 }
+
+
+.btn-person {
+  padding-right: 90px;
+  padding-left: 90px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-size: 30px;
+}
+
+.container-person {
+  display: flex;
+  justify-content: center;
+}
