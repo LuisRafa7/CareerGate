@@ -28,7 +28,10 @@ function Template1({ person123, curriculum }) {
           <Text>City: {person123.city}</Text>
           <Line />
         </View>
-
+        
+        <View>
+          <Text>Curriculum:</Text>
+        </View>
         <Text
           render={({ pageNumber, totalPages }) =>
             `${pageNumber} / ${totalPages}`
