@@ -13,13 +13,13 @@ const personSchema = new Schema(
       type: String,
     },
     postCode: {
-      type: Number,
+      type: String,
     },
     email: {
       type: String,
     },
     phoneNumber: {
-      type: Number,
+      type: String,
     },
     informations: {
       type: String,
