@@ -282,6 +282,108 @@
   justify-content: center;
 }
 
+/*cv*/
+
+.container-create {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-person1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.createcvh1 {
+  font-family:fantasy;
+  font-size: 60px;
+}
+
+.inputcv {
+  width: 300px;
+  height: 40px;
+}
+
+.button4 {
+  all: unset;
+  font-family: fantasy;
+  font-weight: lighter;
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: black;
+  cursor: pointer;
+  z-index: 1;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button4::after,
+.button4::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.button4::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #dad4d4ba;;
+  border-radius: 10px;
+}
+
+.button4::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #868383ba;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.button4:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button4:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button4:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+.buttonfirst {
+  padding: 10px 90px;
+}
+
+.buttonsecond {
+  padding: 10px 130px;
+}
+
+.person-p {
+  font-size: 25px;
+  font-family: fantasy;
+  font-weight: lighter;
+  font-style: oblique;
+  font-variant: small-caps
+}
  /*template1*/
 
  /*template2*/

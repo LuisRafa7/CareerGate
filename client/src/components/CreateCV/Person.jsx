@@ -86,18 +86,19 @@ function Person({ setNumber, person, setPerson }) {
   return (
     <>
       {person123 && (
-        <form onSubmit={handleSubmit}>
-          {image && <img src={image} alt="profile" />}
-          <input
+        <form onSubmit={handleSubmit} className="container-person1" style={{gap: "20px"}}>
+          {image && <img src={image} alt="profile" style={{maxWidth: '300px'}} />}
+          <input 
             type="file"
             accept="image/png, image/jpg, image/jpeg"
             onChange={(e) => {
               setImageSelected(e.target.files[0]);
             }}
           />
-          <button onClick={uploadImage}>Upload Image</button>
-          <label htmlFor="name">Name:</label>
-          <input
+          <button onClick={uploadImage} className="button4 buttonfirst">Upload Image</button>
+          <label htmlFor="name" className="person-p">Name:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="name"
             value={name}
@@ -105,8 +106,9 @@ function Person({ setNumber, person, setPerson }) {
               setName(e.target.value);
             }}
           />
-          <label htmlFor="adress">Adress:</label>
-          <input
+          <label htmlFor="adress" className="person-p">Adress:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="adress"
             value={adress}
@@ -114,8 +116,9 @@ function Person({ setNumber, person, setPerson }) {
               setAdress(e.target.value);
             }}
           />
-          <label htmlFor="city">City:</label>
-          <input
+          <label htmlFor="city" className="person-p">City:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="city"
             value={city}
@@ -123,8 +126,9 @@ function Person({ setNumber, person, setPerson }) {
               setCity(e.target.value);
             }}
           />
-          <label htmlFor="postcode">Post Code:</label>
-          <input
+          <label htmlFor="postcode" className="person-p">Post Code:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="postcode"
             value={postCode}
@@ -132,8 +136,9 @@ function Person({ setNumber, person, setPerson }) {
               setPostCode(e.target.value);
             }}
           />
-          <label htmlFor="email">Email:</label>
-          <input
+          <label htmlFor="email" className="person-p">Email:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="email"
             name="email"
             value={email}
@@ -141,8 +146,9 @@ function Person({ setNumber, person, setPerson }) {
               setEmail(e.target.value);
             }}
           />
-          <label htmlFor="phoneNumber">Phone Number:</label>
-          <input
+          <label htmlFor="phoneNumber" className="person-p">Phone Number:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="phoneNumber"
             value={phoneNumber}
@@ -150,8 +156,9 @@ function Person({ setNumber, person, setPerson }) {
               setPhoneNumber(e.target.value);
             }}
           />
-          <label htmlFor="informations">About me:</label>
-          <input
+          <label htmlFor="informations" className="person-p">About me:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="informations"
             value={informations}
@@ -159,7 +166,7 @@ function Person({ setNumber, person, setPerson }) {
               setInformations(e.target.value);
             }}
           />
-          <button type="submit">Next</button>
+          <button type="submit" className="button4 buttonsecond">Next</button>
         </form>
       )}
     </>

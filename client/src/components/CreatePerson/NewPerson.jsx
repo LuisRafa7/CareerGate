@@ -73,7 +73,7 @@ function NewPerson({ addPerson, getPerson }) {
             setImageSelected(e.target.files[0]);
           }}
         />
-        <button onClick={uploadImage}>Upload Image</button>
+        <button onClick={uploadImage} className="button3">Upload Image</button>
         <label htmlFor="name" className="profile-p">
           Name:
         </label>

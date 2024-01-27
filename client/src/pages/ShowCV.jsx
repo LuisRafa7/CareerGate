@@ -28,8 +28,8 @@ function ShowCV() {
   };
 
   return (
+    <div className="container-create">
     <>
-      <div>ShowCV</div>
       {curriculum ? (
         <>
           <p>Curriculum</p>
@@ -152,6 +152,7 @@ function ShowCV() {
         </>
       )}
     </>
+    </div>
   );
 }
 
