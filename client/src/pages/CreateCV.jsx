@@ -28,6 +28,13 @@ function CreateCV({ getPerson, person123 }) {
     const response1 = await axios.put(
       `http://localhost:5005/api/person/${person123._id}`,
       {
+        name: person.name,
+        adress: person.adress,
+        city: person.city,
+        postCode: person.postCode,
+        email: person.email,
+        phoneNumber: person.phoneNumber,
+        informations: person.informations,
         curriculumVitae: response.data._id,
       }
     );

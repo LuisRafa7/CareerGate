@@ -1,7 +1,9 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/auth.context";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function NewPerson({ addPerson }) {
+function NewPerson({ addPerson, getPerson }) {
   const [name, setName] = useState();
   const [adress, setAdress] = useState();
   const [city, setCity] = useState();
@@ -10,10 +12,13 @@ function NewPerson({ addPerson }) {
   const [phoneNumber, setPhoneNumber] = useState();
   const [informations, setInformations] = useState();
   const [image, setImage] = useState();
+  const [imageSelected, setImageSelected] = useState();
+
+  const navigate = useNavigate();
 
   const { user } = useContext(AuthContext);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newPerson = {
       name: name,
@@ -23,15 +28,49 @@ function NewPerson({ addPerson }) {
       email: email,
       phoneNumber: phoneNumber,
       informations: informations,
+      image: image,
       user: user._id,
     };
     console.log(newPerson);
     addPerson(newPerson);
   };
 
+  const uploadImage = async (e) => {
+    try {
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append("file", imageSelected);
+      formData.append("upload_preset", "iyjtj16g");
+      formData.append("cloud_name", "dnr0j82bs");
+
+      const response = await fetch(
+        "https://api.cloudinary.com/v1_1/dnr0j82bs/image/upload",
+        {
+          method: "post",
+          body: formData,
+        }
+      );
+      if (response) {
+        const imgData = await response.json();
+        setImage(imgData.url.toString());
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <form onSubmit={handleSubmit}>
+        {image && <img src={image} alt="profile" />}
+        <input
+          type="file"
+          accept="image/png, image/jpg, image/jpeg"
+          onChange={(e) => {
+            setImageSelected(e.target.files[0]);
+          }}
+        />
+        <button onClick={uploadImage}>Upload Image</button>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
@@ -61,7 +100,7 @@ function NewPerson({ addPerson }) {
           type="text"
           name="postcode"
           onChange={(e) => {
-            setCity(e.target.value);
+            setPostCode(e.target.value);
           }}
         />
         <label htmlFor="email">Email:</label>

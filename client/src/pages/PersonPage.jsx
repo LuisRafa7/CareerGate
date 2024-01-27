@@ -47,6 +47,7 @@ function PersonPage() {
         { person: [...response1.data.person, response.data._id] }
       );
       setCreatePerson(false);
+      const res = await getPerson();
     } catch (error) {
       console.log(error);
     }
@@ -72,7 +73,7 @@ function PersonPage() {
         })}
 
       {createPerson ? (
-        <NewPerson addPerson={addPerson} />
+        <NewPerson addPerson={addPerson} getPerson={getPerson} />
       ) : (
         <button onClick={addNewPerson}>Create a New Person</button>
       )}

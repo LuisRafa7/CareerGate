@@ -6,7 +6,7 @@ const personSchema = new Schema(
     name: {
       type: String,
     },
-    address: {
+    adress: {
       type: String,
     },
     city: {

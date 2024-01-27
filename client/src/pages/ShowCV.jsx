@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import CreateCV from "./CreateCV";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import Template1 from "./PDF/Template1";
 
 function ShowCV() {
   const [person123, setPerson123] = useState({});
@@ -56,7 +58,6 @@ function ShowCV() {
                         </h5>
                       )}
                       {one.tasks && <h5>{one.tasks}</h5>}
-                      <hr />
                     </div>
                   </>
                 );
@@ -121,9 +122,26 @@ function ShowCV() {
               })}
             </>
           )}
+          <h2>Download</h2>
+          <PDFDownloadLink
+            document={
+              <Template1 person123={person123} curriculum={curriculum} />
+            }
+            fileName="resume"
+          >
+            {({ loading }) =>
+              loading ? (
+                <button>Loading Document</button>
+              ) : (
+                <button>Resume 1</button>
+              )
+            }
+          </PDFDownloadLink>
         </>
       ) : (
-        <CreateCV getPerson={getPerson} person123={person123} />
+        <>
+          <CreateCV getPerson={getPerson} person123={person123} />
+        </>
       )}
     </>
   );
