@@ -70,6 +70,7 @@ function Person({ setNumber, person, setPerson }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setNumber(1);
+    console.log(image);
     setPerson({
       name: name,
       adress: adress,

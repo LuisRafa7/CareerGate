@@ -17,6 +17,7 @@ function CreateCV({ getPerson, person123 }) {
     email: "",
     phoneNumber: "",
     informations: "",
+    image: "",
   });
   const [curriculumVitae, setCurriculumVitae] = useState({});
 
@@ -35,6 +36,7 @@ function CreateCV({ getPerson, person123 }) {
         email: person.email,
         phoneNumber: person.phoneNumber,
         informations: person.informations,
+        image: person.image,
         curriculumVitae: response.data._id,
       }
     );

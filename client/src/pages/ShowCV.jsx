@@ -43,6 +43,7 @@ function ShowCV() {
             <>
               {curriculum.experience.length !== 0 && <h2>Experience</h2>}
               {curriculum.experience.map((one) => {
+                console.log(one.tasks);
                 return (
                   <>
                     <div key={one.id}>
@@ -57,7 +58,14 @@ function ShowCV() {
                           {one.city} - {one.country && <>{one.country}</>}
                         </h5>
                       )}
-                      {one.tasks && <h5>{one.tasks}</h5>}
+                      {one.tasks &&
+                        one.tasks.map((task, i) => {
+                          return (
+                            <div key={i}>
+                              <h5>{task}</h5>;
+                            </div>
+                          );
+                        })}
                     </div>
                   </>
                 );
