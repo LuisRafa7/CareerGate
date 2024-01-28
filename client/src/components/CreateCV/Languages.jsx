@@ -48,11 +48,11 @@ function Languages({ setNumber, curriculumVitae, setCurriculumVitae }) {
         languageArray.map((one) => {
           return (
             <>
-              <div key={one.id}>
+              <div key={one.id} style={{fontSize: '25px',fontFamily: '"Gill Sans", sans-serif'}}>
                 <h4>
                   {one.language} - {one.level}
                 </h4>
-                <button
+                <button className="button4 btn-third"
                   onClick={() => {
                     handleRemove(one.id);
                   }}
@@ -66,32 +66,36 @@ function Languages({ setNumber, curriculumVitae, setCurriculumVitae }) {
         })}
 
       {addLanguage ? (
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="language">Language:</label>
-          <input
+        <form onSubmit={handleSubmit} className="container-exp" style={{gap: "20px"}}>
+          <label htmlFor="language" className="exp-p">Language:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="language"
             onChange={(e) => {
               setLanguage(e.target.value);
             }}
           />
-          <label htmlFor="level">Level:</label>
-          <input
+          <label htmlFor="level" className="exp-p">Level:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="level"
             onChange={(e) => {
               setLevel(e.target.value);
             }}
           />
-          <button type="submit">Add Language</button>
+          <button className="button4 btn-third" type="submit">Add Language</button>
         </form>
       ) : (
         <>
-          <button onClick={addNewLanguage}>Add New Language</button>
+          <button onClick={addNewLanguage} className="button4 btn-third">Add New Language</button>
         </>
       )}
-      <button onClick={handleReturn}>Return</button>
-      <button onClick={handleNext}>Next</button>
+       <div className="col" style={{gap: '20px', paddingTop: '20px'}}>
+      <button onClick={handleReturn} className="button4 btn-exp">Return</button>
+      <button onClick={handleNext} className="button4 btn-exp">Next</button>
+      </div>
     </>
   );
 }

@@ -137,7 +137,7 @@ function Experience({ setNumber, curriculumVitae, setCurriculumVitae }) {
         </form>
       ) : (
         <>
-          <button onClick={addNewExperience}  className="button4 btn-third">Add New Experience</button>
+          <button onClick={addNewExperience} className="button4 btn-third">Add New Experience</button>
         </>
       )}
       <div className="col" style={{gap: '20px', paddingTop: '20px'}}>

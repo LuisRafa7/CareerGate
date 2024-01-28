@@ -8,7 +8,7 @@ function Confirm({ setNumber, submit }) {
 
   return (
     <div>
-      <button onClick={handleConfirm}>Confirm your CV</button>
+      <button onClick={handleConfirm} className="button4 btn-exp">Confirm your CV</button>
     </div>
   );
 }

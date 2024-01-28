@@ -46,9 +46,9 @@ function Skills({ setNumber, curriculumVitae, setCurriculumVitae, submit }) {
         skillsArray.map((one) => {
           return (
             <>
-              <div key={one.id}>
+              <div key={one.id}  style={{fontSize: '25px',fontFamily: '"Gill Sans", sans-serif'}}>
                 <h4>{one.skill}</h4>
-                <button
+                <button className="button4 btn-third"
                   onClick={() => {
                     handleRemove(one.id);
                   }}
@@ -62,24 +62,27 @@ function Skills({ setNumber, curriculumVitae, setCurriculumVitae, submit }) {
         })}
 
       {addSkill ? (
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="skill">Skill:</label>
-          <input
+        <form onSubmit={handleSubmit} className="container-exp" style={{gap: "20px"}}>
+          <label htmlFor="skill" className="exp-p">Skill:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="skill"
             onChange={(e) => {
               setSkill(e.target.value);
             }}
           />
-          <button type="submit">Add Skill</button>
+          <button type="submit"  className="button4 btn-third">Add Skill</button>
         </form>
       ) : (
         <>
-          <button onClick={addNewSkill}>Add New Skill</button>
+          <button onClick={addNewSkill}  className="button4 btn-third">Add New Skill</button>
         </>
       )}
-      <button onClick={handleReturn}>Return</button>
-      <button onClick={handleConfirm}>Next</button>
+       <div className="col" style={{gap: '20px', paddingTop: '20px'}}>
+      <button onClick={handleReturn} className="button4 btn-exp">Return</button>
+      <button onClick={handleConfirm} className="button4 btn-exp">Next</button>
+      </div>
     </>
   );
 }
