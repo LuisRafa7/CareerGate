@@ -55,7 +55,7 @@ function Education({ setNumber, curriculumVitae, setCurriculumVitae }) {
         educationArray.map((one) => {
           return (
             <>
-              <div key={one.id}>
+              <div key={one.id}  style={{fontSize: '25px',fontFamily: '"Gill Sans", sans-serif'}}>
                 <h3>{one.school}</h3>
                 <h4>{one.degree}</h4>
                 <h5>
@@ -64,7 +64,7 @@ function Education({ setNumber, curriculumVitae, setCurriculumVitae }) {
                 <h6>
                   {one.city} - {one.country}
                 </h6>
-                <button
+                <button className="button4 btn-third"
                   onClick={() => {
                     handleRemove(one.id);
                   }}
@@ -78,64 +78,72 @@ function Education({ setNumber, curriculumVitae, setCurriculumVitae }) {
         })}
 
       {addEducation ? (
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="school">School:</label>
-          <input
+        <form onSubmit={handleSubmit} className="container-exp" style={{gap: "20px"}}>
+          <label htmlFor="school" className="exp-p">School:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="school"
             onChange={(e) => {
               setSchool(e.target.value);
             }}
           />
-          <label htmlFor="startDate">Start Date:</label>
-          <input
+          <label htmlFor="startDate" className="exp-p">Start Date:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="date"
             name="startDate"
             onChange={(e) => {
               setStartDate(e.target.value);
             }}
           />
-          <label htmlFor="endDate">End Date:</label>
-          <input
+          <label htmlFor="endDate" className="exp-p">End Date:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="endDate"
             onChange={(e) => {
               setEndDate(e.target.value);
             }}
           />
-          <label htmlFor="degree">Degree:</label>
-          <input
+          <label htmlFor="degree" className="exp-p">Degree:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="degree"
             onChange={(e) => {
               setDegree(e.target.value);
             }}
           />
-          <label htmlFor="city">City:</label>
-          <input
+          <label htmlFor="city" className="exp-p">City:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="city"
             onChange={(e) => {
               setCity(e.target.value);
             }}
           />
-          <label htmlFor="country">Country:</label>
-          <input
+          <label htmlFor="country" className="exp-p">Country:</label>
+          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(3px)',opacity: 1}}
             type="text"
             name="country"
             onChange={(e) => {
               setCountry(e.target.value);
             }}
           />
-          <button type="submit">Add Education</button>
+          <button className="button4 btn-third" type="submit">Add Education</button>
         </form>
       ) : (
         <>
-          <button onClick={addNewEducation}>Add New Education</button>
+          <button onClick={addNewEducation} className="button4 btn-third">Add New Education</button>
         </>
       )}
-      <button onClick={handleReturn}>Return</button>
-      <button onClick={handleNext}>Next</button>
+      <div className="col" style={{gap: '20px', paddingTop: '20px'}}>
+      <button onClick={handleReturn} className="button4 btn-exp">Return</button>
+      <button onClick={handleNext} className="button4 btn-exp">Next</button>
+      </div>
     </>
   );
 }
