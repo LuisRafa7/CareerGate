@@ -10,15 +10,18 @@ function CarouselPage() {
             height: '100%',
             objectFit: 'cover',
           }}/>
-        <Carousel.Caption>
+        <Carousel.Caption className="centered-content">
           <h3>First slide label</h3>
-          <button className="button button-homepage"
-      onClick={() => {
-        navigate("/person");
-      }}
-    >
-      Create your CV
-    </button>
+          <div className="centered-buttons">
+            <button
+              className="button button-homepage"
+              onClick={() => {
+                navigate("/person");
+              }}
+            >
+              Create your CV
+            </button>
+          </div>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -28,7 +31,7 @@ function CarouselPage() {
             height: '100%',
             objectFit: 'cover',
           }}/>
-        <Carousel.Caption>
+        <Carousel.Caption className="centered-content"> 
           <h3>Second slide label</h3>
           <button className="button button-homepage"
       onClick={() => {
@@ -46,7 +49,7 @@ function CarouselPage() {
             height: '100%',
             objectFit: 'cover',
           }}/>
-        <Carousel.Caption>
+        <Carousel.Caption className="centered-content">
           <h3>Third slide label</h3>
           <button className="button button-homepage"
       onClick={() => {

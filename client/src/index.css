@@ -407,6 +407,20 @@
 .btn-exp {
   padding: 10px 130px;
 }
+
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.centered-buttons {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+
  /*template1*/
 
  /*template2*/
