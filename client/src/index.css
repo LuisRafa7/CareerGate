@@ -420,6 +420,26 @@
   margin-top: 20px;
 }
 
+.hover-underline {
+  position: relative;
+  cursor: pointer;
+}
+
+.hover-underline::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #d0ff00;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
 
  /*template1*/
 
