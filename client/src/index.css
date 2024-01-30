@@ -94,13 +94,6 @@
   transform: translate(0, 5%);
 }
 
-.center-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .button-homepage {
   padding: 30px 60px;
   font-size: 25px;

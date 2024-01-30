@@ -11,6 +11,7 @@ import CreateCV from "./pages/CreateCV";
 import Homepage from "./pages/Homepage";
 import PersonPage from "./pages/PersonPage";
 import ShowCV from "./pages/ShowCV";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
