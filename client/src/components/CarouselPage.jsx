@@ -14,6 +14,7 @@ function CarouselPage() {
           }}/>
         <Carousel.Caption className="centered-content">
           <h3 style={{ marginBottom: '90px', fontSize: '80px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Experience</h3>
+          <p style={{ marginTop: '30px', fontSize: '50px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Including your experiences on your curriculum vitae is crucial as it provides prospective employers with tangible evidence of your skills, capabilities, and accomplishments. Your experiences serve as a real-world demonstration of how you have applied your knowledge and expertise in previous roles. By detailing specific tasks, projects, and achievements, you offer a comprehensive view of your professional journey, helping employers gauge your suitability for the position.</p>
           <div className="centered-buttons">
             <button
               className="button button-homepage"
@@ -24,7 +25,6 @@ function CarouselPage() {
               Create your CV
             </button>
           </div>
-          <p style={{ marginTop: '30px', fontSize: '50px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -35,14 +35,17 @@ function CarouselPage() {
           }}/>
         <Carousel.Caption className="centered-content"> 
           <h3 style={{ marginBottom: '90px', fontSize: '80px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Education</h3>
-          <button className="button button-homepage"
-      onClick={() => {
-        navigate("/person");
-      }}
-    >
-      Create your CV
-    </button>
-          <p style={{ marginTop: '30px', fontSize: '50px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p style={{ marginTop: '30px', fontSize: '50px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Including your education on your curriculum vitae is crucial as it provides potential employers with essential insights into your academic background, qualifications, and skillsets. Education serves as a foundational aspect of your professional profile, showcasing your commitment to learning and development. Employers often use educational information as a quick reference point to gauge your level of expertise and suitability for a particular role.</p>
+          <div className="centered-buttons">
+            <button
+              className="button button-homepage"
+              onClick={() => {
+                navigate("/person");
+              }}
+            >
+              Create your CV
+            </button>
+          </div>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -53,16 +56,19 @@ function CarouselPage() {
           }}/>
         <Carousel.Caption className="centered-content">
           <h3 style={{ marginBottom: '90px', fontSize: '80px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Languages</h3>
-          <button className="button button-homepage"
-      onClick={() => {
-        navigate("/person");
-      }}
-    >
-      Create your CV
-    </button>
           <p style={{ marginTop: '30px', fontSize: '50px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          Incorporating a section on language proficiency in your curriculum vitae holds significant importance in today's globalized and interconnected professional landscape. Proficiency in multiple languages not only showcases your versatility but also demonstrates a valuable skill set that can greatly enhance your effectiveness in various roles.
           </p>
+          <div className="centered-buttons">
+            <button
+              className="button button-homepage"
+              onClick={() => {
+                navigate("/person");
+              }}
+            >
+              Create your CV
+            </button>
+          </div>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -73,16 +79,19 @@ function CarouselPage() {
           }}/>
         <Carousel.Caption className="centered-content">
           <h3 style={{ marginBottom: '90px', fontSize: '80px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>Skills</h3>
-          <button className="button button-homepage"
-      onClick={() => {
-        navigate("/person");
-      }}
-    >
-      Create your CV
-    </button>
-          <p style={{ marginTop: '30px', fontSize: '50px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          <p style={{ marginTop: '30px', fontSize: '50px', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}}>         
+          In a curriculum vitae, showcasing your skills is paramount as it serves as a comprehensive representation of your professional abilities and qualifications. This section allows prospective employers to gain a clear understanding of what you bring to the table and how well-suited you are for a particular role. 
           </p>
+          <div className="centered-buttons">
+            <button
+              className="button button-homepage"
+              onClick={() => {
+                navigate("/person");
+              }}
+            >
+              Create your CV
+            </button>
+          </div>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
