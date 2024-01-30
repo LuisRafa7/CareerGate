@@ -1,7 +1,9 @@
 import Carousel from 'react-bootstrap/Carousel';
+import { useNavigate } from "react-router-dom";
 import Image from '../../public/images/image.jpg';
 
 function CarouselPage() {
+  const navigate = useNavigate();
   return (
     <Carousel>
       <Carousel.Item>
