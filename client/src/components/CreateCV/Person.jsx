@@ -5,6 +5,7 @@ import axios from "axios";
 function Person({ setNumber, person, setPerson }) {
   const [person123, setPerson123] = useState();
   const [name, setName] = useState();
+  const [job, setJob] = useState();
   const [adress, setAdress] = useState();
   const [city, setCity] = useState();
   const [postCode, setPostCode] = useState();
@@ -27,6 +28,7 @@ function Person({ setNumber, person, setPerson }) {
       );
       setPerson123(response.data);
       setName(response.data.name ? response.data.name : "");
+      setJob(response.data.job ? response.data.job : "");
       setAdress(response.data.adress ? response.data.adress : "");
       setCity(response.data.city ? response.data.city : "");
       setPostCode(response.data.postCode ? response.data.postCode : "");
@@ -73,6 +75,7 @@ function Person({ setNumber, person, setPerson }) {
     console.log(image);
     setPerson({
       name: name,
+      job: job,
       adress: adress,
       city: city,
       postCode: postCode,
@@ -86,19 +89,38 @@ function Person({ setNumber, person, setPerson }) {
   return (
     <>
       {person123 && (
-        <form onSubmit={handleSubmit} className="container-person1" style={{gap: "20px"}}>
-          {image && <img src={image} alt="profile" style={{maxWidth: '300px'}} />}
-          <input 
+        <form
+          onSubmit={handleSubmit}
+          className="container-person1"
+          style={{ gap: "20px" }}
+        >
+          {image && (
+            <img src={image} alt="profile" style={{ maxWidth: "300px" }} />
+          )}
+          <input
             type="file"
             accept="image/png, image/jpg, image/jpeg"
             onChange={(e) => {
               setImageSelected(e.target.files[0]);
             }}
           />
-          <button onClick={uploadImage} className="button4 buttonfirst">Upload Image</button>
-          <label htmlFor="name" className="person-p">Name:</label>
-          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
-            backdropFilter: 'blur(3px)',opacity: 1}}
+          <button onClick={uploadImage} className="button4 buttonfirst">
+            Upload Image
+          </button>
+          <label htmlFor="name" className="person-p">
+            Name:
+          </label>
+          <input
+            className="inputcv"
+            style={{
+              fontSize: "25px",
+              fontFamily: '"Gill Sans", sans-serif',
+              boxSizing: "border-box",
+              color: "black",
+              backgroundColor: "rgba(255, 255, 255, 0.3)",
+              backdropFilter: "blur(3px)",
+              opacity: 1,
+            }}
             type="text"
             name="name"
             value={name}
@@ -106,9 +128,41 @@ function Person({ setNumber, person, setPerson }) {
               setName(e.target.value);
             }}
           />
-          <label htmlFor="adress" className="person-p">Adress:</label>
-          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
-            backdropFilter: 'blur(3px)',opacity: 1}}
+          <label htmlFor="job" className="person-p">
+            Job:
+          </label>
+          <input
+            className="inputcv"
+            style={{
+              fontSize: "25px",
+              fontFamily: '"Gill Sans", sans-serif',
+              boxSizing: "border-box",
+              color: "black",
+              backgroundColor: "rgba(255, 255, 255, 0.3)",
+              backdropFilter: "blur(3px)",
+              opacity: 1,
+            }}
+            type="text"
+            name="job"
+            value={job}
+            onChange={(e) => {
+              setJob(e.target.value);
+            }}
+          />
+          <label htmlFor="adress" className="person-p">
+            Adress:
+          </label>
+          <input
+            className="inputcv"
+            style={{
+              fontSize: "25px",
+              fontFamily: '"Gill Sans", sans-serif',
+              boxSizing: "border-box",
+              color: "black",
+              backgroundColor: "rgba(255, 255, 255, 0.3)",
+              backdropFilter: "blur(3px)",
+              opacity: 1,
+            }}
             type="text"
             name="adress"
             value={adress}
@@ -116,9 +170,20 @@ function Person({ setNumber, person, setPerson }) {
               setAdress(e.target.value);
             }}
           />
-          <label htmlFor="city" className="person-p">City:</label>
-          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
-            backdropFilter: 'blur(3px)',opacity: 1}}
+          <label htmlFor="city" className="person-p">
+            City:
+          </label>
+          <input
+            className="inputcv"
+            style={{
+              fontSize: "25px",
+              fontFamily: '"Gill Sans", sans-serif',
+              boxSizing: "border-box",
+              color: "black",
+              backgroundColor: "rgba(255, 255, 255, 0.3)",
+              backdropFilter: "blur(3px)",
+              opacity: 1,
+            }}
             type="text"
             name="city"
             value={city}
@@ -126,9 +191,20 @@ function Person({ setNumber, person, setPerson }) {
               setCity(e.target.value);
             }}
           />
-          <label htmlFor="postcode" className="person-p">Post Code:</label>
-          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
-            backdropFilter: 'blur(3px)',opacity: 1}}
+          <label htmlFor="postcode" className="person-p">
+            Post Code:
+          </label>
+          <input
+            className="inputcv"
+            style={{
+              fontSize: "25px",
+              fontFamily: '"Gill Sans", sans-serif',
+              boxSizing: "border-box",
+              color: "black",
+              backgroundColor: "rgba(255, 255, 255, 0.3)",
+              backdropFilter: "blur(3px)",
+              opacity: 1,
+            }}
             type="text"
             name="postcode"
             value={postCode}
@@ -136,9 +212,20 @@ function Person({ setNumber, person, setPerson }) {
               setPostCode(e.target.value);
             }}
           />
-          <label htmlFor="email" className="person-p">Email:</label>
-          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
-            backdropFilter: 'blur(3px)',opacity: 1}}
+          <label htmlFor="email" className="person-p">
+            Email:
+          </label>
+          <input
+            className="inputcv"
+            style={{
+              fontSize: "25px",
+              fontFamily: '"Gill Sans", sans-serif',
+              boxSizing: "border-box",
+              color: "black",
+              backgroundColor: "rgba(255, 255, 255, 0.3)",
+              backdropFilter: "blur(3px)",
+              opacity: 1,
+            }}
             type="email"
             name="email"
             value={email}
@@ -146,9 +233,20 @@ function Person({ setNumber, person, setPerson }) {
               setEmail(e.target.value);
             }}
           />
-          <label htmlFor="phoneNumber" className="person-p">Phone Number:</label>
-          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
-            backdropFilter: 'blur(3px)',opacity: 1}}
+          <label htmlFor="phoneNumber" className="person-p">
+            Phone Number:
+          </label>
+          <input
+            className="inputcv"
+            style={{
+              fontSize: "25px",
+              fontFamily: '"Gill Sans", sans-serif',
+              boxSizing: "border-box",
+              color: "black",
+              backgroundColor: "rgba(255, 255, 255, 0.3)",
+              backdropFilter: "blur(3px)",
+              opacity: 1,
+            }}
             type="text"
             name="phoneNumber"
             value={phoneNumber}
@@ -156,9 +254,20 @@ function Person({ setNumber, person, setPerson }) {
               setPhoneNumber(e.target.value);
             }}
           />
-          <label htmlFor="informations" className="person-p">About me:</label>
-          <input className="inputcv" style={{ fontSize: '25px',fontFamily: '"Gill Sans", sans-serif',boxSizing: 'border-box',color: 'black',backgroundColor: 'rgba(255, 255, 255, 0.3)',
-            backdropFilter: 'blur(3px)',opacity: 1}}
+          <label htmlFor="informations" className="person-p">
+            About me:
+          </label>
+          <input
+            className="inputcv"
+            style={{
+              fontSize: "25px",
+              fontFamily: '"Gill Sans", sans-serif',
+              boxSizing: "border-box",
+              color: "black",
+              backgroundColor: "rgba(255, 255, 255, 0.3)",
+              backdropFilter: "blur(3px)",
+              opacity: 1,
+            }}
             type="text"
             name="informations"
             value={informations}
@@ -166,7 +275,9 @@ function Person({ setNumber, person, setPerson }) {
               setInformations(e.target.value);
             }}
           />
-          <button type="submit" className="button4 buttonsecond">Next</button>
+          <button type="submit" className="button4 buttonsecond">
+            Next
+          </button>
         </form>
       )}
     </>

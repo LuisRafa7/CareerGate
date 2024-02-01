@@ -6,6 +6,9 @@ const personSchema = new Schema(
     name: {
       type: String,
     },
+    job: {
+      type: String,
+    },
     adress: {
       type: String,
     },

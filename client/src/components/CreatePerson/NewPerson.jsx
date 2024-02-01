@@ -5,6 +5,7 @@ import axios from "axios";
 
 function NewPerson({ addPerson, getPerson }) {
   const [name, setName] = useState();
+  const [job, setJob] = useState();
   const [adress, setAdress] = useState();
   const [city, setCity] = useState();
   const [postCode, setPostCode] = useState();
@@ -22,6 +23,7 @@ function NewPerson({ addPerson, getPerson }) {
     e.preventDefault();
     const newPerson = {
       name: name,
+      job: job,
       adress: adress,
       city: city,
       postCode: postCode,
@@ -73,7 +75,9 @@ function NewPerson({ addPerson, getPerson }) {
             setImageSelected(e.target.files[0]);
           }}
         />
-        <button onClick={uploadImage} className="button3">Upload Image</button>
+        <button onClick={uploadImage} className="button3">
+          Upload Image
+        </button>
         <label htmlFor="name" className="profile-p">
           Name:
         </label>
@@ -91,6 +95,25 @@ function NewPerson({ addPerson, getPerson }) {
           name="name"
           onChange={(e) => {
             setName(e.target.value);
+          }}
+        />
+        <label htmlFor="job" className="profile-p">
+          Job:
+        </label>
+        <input
+          style={{
+            fontSize: "30px",
+            fontFamily: '"Gill Sans", sans-serif',
+            boxSizing: "border-box",
+            color: "black",
+            backgroundColor: "rgba(255, 255, 255, 0.3)",
+            backdropFilter: "blur(3px)",
+            opacity: 1,
+          }}
+          type="text"
+          name="job"
+          onChange={(e) => {
+            setJob(e.target.value);
           }}
         />
         <label htmlFor="adress" className="profile-p">

@@ -7,6 +7,7 @@ const curriculumVitaeSchema = new Schema(
       {
         id: { type: String },
         profession: { type: String },
+        company: { type: String },
         startDate: { type: Date },
         endDate: { type: String },
         tasks: [{ type: String }],
