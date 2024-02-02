@@ -271,11 +271,6 @@
   font-size: 30px;
 }
 
-.container-person {
-  display: flex;
-  justify-content: center;
-}
-
 /*cv*/
 
 .container-create {
@@ -441,3 +436,29 @@
   width: 100%;
 }
 
+@keyframes gradientBorderAnimation {
+  0% {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, #ffff00, #4e484b, #cdd6da, #000000);
+  }
+  50% {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, #000000, #cdd6da, #4e484b, #ffff00);
+  }
+  100% {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, #ffff00, #4e484b, #cdd6da, #000000);
+  }
+}
+
+.gradient-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 15px solid transparent;
+  border-radius: 10px;
+  z-index: -1;
+  animation: gradientBorderAnimation 10s ease infinite;
+}
