@@ -54,14 +54,15 @@ function PersonPage() {
   };
 
   return (
-  <div className="container-person">
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap:'40px', borderRadius: '10px', padding:'120px 80px', width: 'fit-content', margin: 'auto', marginTop: '200px', marginBottom: '200px', position: 'relative',
+  overflow: 'hidden'}}>
     <>
       {personArray &&
         personArray.map((one) => {
           return (
             <>
               <div key={one._id}>
-                <button
+                <button className="btn1"
                   onClick={() => {
                     navigate(`/person/CV/${one._id}`);
                   }}
@@ -79,6 +80,7 @@ function PersonPage() {
         <button onClick={addNewPerson}className="button btn-person">Create a New Person</button>
       )}
     </>
+    <div className="gradient-border"></div>
     </div>
   );
 }

@@ -140,7 +140,7 @@ function Education({ setNumber, curriculumVitae, setCurriculumVitae }) {
           <button onClick={addNewEducation} className="button4 btn-third">Add New Education</button>
         </>
       )}
-      <div className="col" style={{gap: '20px', paddingTop: '20px'}}>
+      <div className="col" style={{gap:'30px', paddingTop:'20px'}}>
       <button onClick={handleReturn} className="button4 btn-exp">Return</button>
       <button onClick={handleNext} className="button4 btn-exp">Next</button>
       </div>
