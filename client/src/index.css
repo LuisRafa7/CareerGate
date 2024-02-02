@@ -2,15 +2,21 @@
 .careergate {
     font-family:fantasy;
     font-size: 120px; 
-    animation: pulsateColor 3s ease-in-out infinite alternate;
+    animation: pulsateColor 5s ease-in-out infinite alternate;
     transition: color 1s ease;
     text-shadow: 1px 1px 2px #010200;
 }
 @keyframes pulsateColor {
   0% {
-    color: #979797;
+    color: #ffffff;
+  }
+  25% {
+    color: #e8e8e8;
   }
   50% {
+    color: #979797;
+  }
+  75% {
     color: #3b3b3b;
   }
   100% {
@@ -273,11 +279,6 @@
 
 /*cv*/
 
-.container-create {
-  display: flex;
-  flex-direction: column;
-}
-
 .container-person1 {
   display: flex;
   flex-direction: column;
@@ -461,4 +462,57 @@
   border-radius: 10px;
   z-index: -1;
   animation: gradientBorderAnimation 10s ease infinite;
+}
+
+.yellow-underline {
+  position: relative;
+}
+
+.yellow-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #ffff00;
+}
+
+.button-cv {
+  background-color: #ffff00;
+  border-radius: 100px;
+  box-shadow: rgba(111, 103, 28, 0.2) 0 -25px 18px -14px inset,rgba(148, 154, 59, 0.15) 0 1px 2px,rgba(150, 156, 61, 0.15) 0 2px 4px,rgba(147, 167, 50, 0.15) 0 4px 8px,rgba(153, 167, 52, 0.15) 0 8px 16px,rgba(158, 187, 44, 0.15) 0 16px 32px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  display: inline-block;
+  font-family: fantasy;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 20px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-cv:hover {
+  box-shadow: rgba(187, 187, 44, 0.35) 0 -25px 18px -14px inset,rgba(187, 187, 44, 0.25) 0 1px 2px,rgba(187, 182, 44, 0.25) 0 2px 4px,rgba(177, 187, 44, 0.25) 0 4px 8px,rgba(185, 187, 44, 0.25) 0 8px 16px,rgba(168, 187, 44, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.btn1 {
+  font-family: fantasy;
+  font-weight: lighter;
+  width: 100px;
+  height: 30px;
+  color: #f0f0f0;
+  background: #28282d;
+  border-radius: 10px;
+  border: none;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

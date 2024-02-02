@@ -62,7 +62,7 @@ function PersonPage() {
           return (
             <>
               <div key={one._id}>
-                <button className="button"
+                <button className="btn1"
                   onClick={() => {
                     navigate(`/person/CV/${one._id}`);
                   }}
