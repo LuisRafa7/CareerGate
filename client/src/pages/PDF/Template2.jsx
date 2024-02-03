@@ -8,6 +8,9 @@ import {
   View,
   Font,
 } from "@react-pdf/renderer";
+import phoneImage from "../../images/phone.png";
+import mailImage from "../../images/mail.png";
+import pointImage from "../../images/point.png";
 
 Font.register({
   family: "Open Sans",
@@ -46,25 +49,39 @@ const styles = StyleSheet.create({
     marginRight: "auto",
   },
   aboutText: {
-    fontSize: "8pt",
-    marginTop: "20%",
+    fontSize: "9pt",
+    marginTop: "25%",
     textAlign: "center",
     marginLeft: "4%",
     marginRight: "4%",
+    marginBottom: "10%",
+  },
+  icon: {
+    width: "25px",
+    height: "25px",
+    marginTop: "20%",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
   blueTitle: {
     fontFamily: "Open Sans",
     fontSize: "20pt",
-    marginTop: "12%",
+    marginTop: "15%",
     borderBottom: "2px",
-    borderBottomColor: "#e9f1f7",
+    borderBottomColor: "black",
     fontWeight: "extrabold",
+    textAlign: "center",
+    marginLeft: "4%",
+    marginRight: "4%",
   },
   blueTitle1: {
     fontFamily: "Open Sans",
-    fontSize: "10pt",
+    fontSize: "9pt",
     marginTop: "6%",
-    fontWeight: "extrabold",
+    fontWeight: "bold",
+    textAlign: "center",
+    marginLeft: "4%",
+    marginRight: "4%",
   },
   blueParagraph: {
     fontSize: "8pt",
@@ -72,7 +89,6 @@ const styles = StyleSheet.create({
   },
   whiteTitle: {
     fontFamily: "Open Sans",
-    color: "#36454f",
     fontSize: "40pt",
     fontWeight: "extrabold",
     paddingBottom: "0px",
@@ -80,7 +96,6 @@ const styles = StyleSheet.create({
   },
   whiteTitle1: {
     fontFamily: "Open Sans",
-    color: "#36454f",
     fontSize: "20pt",
     paddingTop: "0px",
     marginTop: "-3%",
@@ -94,7 +109,6 @@ const styles = StyleSheet.create({
     marginBottom: "5%",
   },
   whiteLabel: {
-    backgroundColor: "#e9f1f7",
     width: "75%",
     paddingLeft: "4%",
     paddingRight: "4%",
@@ -103,30 +117,32 @@ const styles = StyleSheet.create({
   },
   whiteTitlePage: {
     fontFamily: "Open Sans",
-    fontSize: "20pt",
-    color: "#36454f",
+    fontSize: "15pt",
+    backgroundColor: "#d3d3d3",
     marginTop: "12%",
-    borderBottom: "2px",
-    borderBottomColor: "#36454f",
     fontWeight: "extrabold",
   },
   whiteTitlePage1: {
     fontFamily: "Open Sans",
     fontSize: "10pt",
-    marginTop: "6%",
+    marginTop: "3%",
     fontWeight: "extrabold",
-    color: "#36454f",
   },
   whiteTitlePage2: {
     fontFamily: "Open Sans",
     fontSize: "9pt",
-    color: "#36454f",
   },
   whiteTitlePage3: {
     fontFamily: "Open Sans",
     fontSize: "12pt",
     fontWeight: "extrabold",
-    color: "#36454f",
+  },
+  whiteTitlePage4: {
+    fontFamily: "Open Sans",
+    fontSize: "10pt",
+    fontWeight: "extrabold",
+    marginTop: "3%",
+    marginBottom: "-2%",
   },
   borderLeft: {
     borderLeft: "1px",
@@ -157,46 +173,36 @@ function Template2({ person123, curriculum }) {
                   <Text style={styles.aboutText}>{person123.informations}</Text>
                 </View>
               )}
-              <Text style={styles.blueTitle}>Contact</Text>
               {person123.phoneNumber && (
                 <View>
-                  <Text style={styles.blueTitle1}>Phone</Text>
-                  <Text style={styles.blueParagraph}>
-                    {person123.phoneNumber}
-                  </Text>
+                  <Image style={styles.icon} src={phoneImage} />
+                  <Text style={styles.blueTitle1}>{person123.phoneNumber}</Text>
                 </View>
               )}
               {person123.email && (
                 <View>
-                  <Text style={styles.blueTitle1}>Email</Text>
-                  <Text style={styles.blueParagraph}>{person123.email}</Text>
+                  <Image style={styles.icon} src={mailImage} />
+                  <Text style={styles.blueTitle1}>{person123.email}</Text>
                 </View>
               )}
               {person123.adress && (
                 <View>
-                  <Text style={styles.blueTitle1}>Address</Text>
-                  <Text style={styles.blueParagraph}>{person123.adress}</Text>
-                  <Text style={styles.blueParagraph}>
-                    {person123.postCode} - {person123.city}
-                  </Text>
+                  <Image style={styles.icon} src={pointImage} />
+                  <Text style={styles.blueTitle1}>{person123.adress}</Text>
+                  {person123.postCode && (
+                    <Text style={styles.blueTitle1}>
+                      {person123.postCode}{" "}
+                      {person123.city && <Text>- {person123.city}</Text>}
+                    </Text>
+                  )}
                 </View>
               )}
             </View>
-            <View>
-              <Text style={styles.blueTitle}>Expertise</Text>
-              {curriculum.skills &&
-                curriculum.skills.map((item) => {
-                  return (
-                    <View>
-                      <Text style={styles.blueTitle1}>- {item.skill}</Text>
-                    </View>
-                  );
-                })}
-            </View>
-            <View>
-              <Text style={styles.blueTitle}>Language</Text>
-              {curriculum.languages &&
-                curriculum.languages.map((item) => {
+
+            {curriculum.languages && (
+              <View>
+                <Text style={styles.blueTitle}>Languages</Text>
+                {curriculum.languages.map((item) => {
                   return (
                     <View>
                       <Text style={styles.blueTitle1}>
@@ -205,7 +211,8 @@ function Template2({ person123, curriculum }) {
                     </View>
                   );
                 })}
-            </View>
+              </View>
+            )}
           </View>
 
           <View style={styles.whiteLabel}>
@@ -219,11 +226,16 @@ function Template2({ person123, curriculum }) {
                 <Text style={styles.whiteTitle1}>{person123.job}</Text>
               </View>
             )}
-            {person123.informations && (
+            {curriculum.skills && (
               <View>
-                <Text style={styles.whiteTitleText}>
-                  {person123.informations}
-                </Text>
+                <Text style={styles.whiteTitlePage}>Skills</Text>
+                {curriculum.skills.map((item) => {
+                  return (
+                    <View>
+                      <Text style={styles.whiteTitlePage4}>• {item.skill}</Text>
+                    </View>
+                  );
+                })}
               </View>
             )}
 
@@ -232,7 +244,7 @@ function Template2({ person123, curriculum }) {
                 <Text style={styles.whiteTitlePage}>Experience</Text>
                 {curriculum.experience.map((item) => {
                   return (
-                    <View style={styles.borderLeft}>
+                    <View>
                       {item.startDate && (
                         <View>
                           <Text style={styles.whiteTitlePage1}>
@@ -274,7 +286,9 @@ function Template2({ person123, curriculum }) {
                         item.tasks.map((task) => {
                           return (
                             <View>
-                              <Text style={styles.whiteTitleText}>{task}</Text>
+                              <Text style={styles.whiteTitleText}>
+                                • {task}
+                              </Text>
                             </View>
                           );
                         })}
@@ -289,7 +303,7 @@ function Template2({ person123, curriculum }) {
                 <Text style={styles.whiteTitlePage}>Education</Text>
                 {curriculum.education.map((item) => {
                   return (
-                    <View style={styles.borderLeft}>
+                    <View>
                       {item.startDate && (
                         <View>
                           <Text style={styles.whiteTitlePage1}>
@@ -302,27 +316,17 @@ function Template2({ person123, curriculum }) {
                           </Text>
                         </View>
                       )}
-                      {item.degree && (
+                      {item.school && (
                         <View>
                           <Text style={styles.whiteTitlePage3}>
-                            {item.degree}
+                            {item.school}
                           </Text>
                         </View>
                       )}
-                      {item.school && (
+                      {item.degree && (
                         <View>
                           <Text style={styles.whiteTitlePage2}>
-                            {item.school} |{" "}
-                            {item.city && (
-                              <Text style={styles.whiteTitlePage2}>
-                                {item.city} -{" "}
-                                {item.country && (
-                                  <Text style={styles.whiteTitlePage2}>
-                                    {item.country}
-                                  </Text>
-                                )}
-                              </Text>
-                            )}
+                            {"  "}• {item.degree}
                           </Text>
                         </View>
                       )}

@@ -10,8 +10,9 @@ import ProfilePage from "./pages/auth/ProfilePage";
 import CreateCV from "./pages/CreateCV";
 import Homepage from "./pages/Homepage";
 import PersonPage from "./pages/PersonPage";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Template1View from "./components/ViewPDF/Template1View";
 import ShowCV from "./pages/ShowCV";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/person" element={<PersonPage />} />
         <Route path="/person/CV/:personId" element={<ShowCV />} />
         <Route path="/person/createCV" element={<CreateCV />} />
+        <Route path="/template1" element={<Template1View />} />
       </Routes>
     </>
   );

@@ -157,9 +157,12 @@ function Template1({ person123, curriculum }) {
                 <View>
                   <Text style={styles.blueTitle1}>Address</Text>
                   <Text style={styles.blueParagraph}>{person123.adress}</Text>
-                  <Text style={styles.blueParagraph}>
-                    {person123.postCode} - {person123.city}
-                  </Text>
+                  {person123.postCode && (
+                    <Text style={styles.blueParagraph}>
+                      {person123.postCode}{" "}
+                      {person123.city && <Text>- {person123.city}</Text>}
+                    </Text>
+                  )}
                 </View>
               )}
             </View>
