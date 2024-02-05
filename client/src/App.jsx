@@ -12,6 +12,7 @@ import Homepage from "./pages/Homepage";
 import PersonPage from "./pages/PersonPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ShowCV from "./pages/ShowCV";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/person" element={<PersonPage />} />
         <Route path="/person/CV/:personId" element={<ShowCV />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   );
