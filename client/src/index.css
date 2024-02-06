@@ -8,15 +8,12 @@
 }
 @keyframes pulsateColor {
   0% {
-    color: #ffffff;
-  }
-  25% {
     color: #e8e8e8;
   }
-  50% {
+  30% {
     color: #979797;
   }
-  75% {
+  60% {
     color: #3b3b3b;
   }
   100% {
@@ -515,4 +512,56 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.error-page .notFound404 h1 {
+  font-family: montserrat,sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  font-size: 350px;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: -12px;
+  color: #030005;
+  text-transform: uppercase;
+  text-shadow: -1px -1px 0 #ff4800, 1px 1px 0 #ffff00;
+  letter-spacing: -20px;
+}
+
+.error-page .notFound404 h2 {
+  font-family: montserrat,sans-serif;
+  left: 0;
+  right: 0;
+  top: 110px;
+  font-size: 70px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 2px 0 #ff4800;
+  letter-spacing: 13px;
+  margin: 0;
+}
+
+.done {
+  font-family: montserrat,sans-serif;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #ffff00;
+  text-decoration: none;
+  border: 2px solid;
+  background: 0 0;
+  padding: 20px 50px;
+  font-size: 14px;
+  font-weight: 700;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+}
+
+.done:hover {
+  color: #ff4800;
 }
