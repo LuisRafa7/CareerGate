@@ -10,7 +10,7 @@ import PersonPage from "./pages/PersonPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ShowCV from "./pages/ShowCV";
 import ErrorPage from "./pages/ErrorPage";
-import IsPrivate from "./components/Modal/IsPrivate";
+import IsPrivate from "./components/IsPrivate";
 
 function App() {
   return (
