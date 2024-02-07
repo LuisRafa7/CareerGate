@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/auth.context";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 function NewPerson({ addPerson, getPerson }) {
   const [name, setName] = useState();

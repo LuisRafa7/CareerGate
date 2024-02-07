@@ -172,7 +172,7 @@ function Template1({ person123, curriculum }) {
                 curriculum.skills.map((item) => {
                   return (
                     <View>
-                      <Text style={styles.blueTitle1}>- {item.skill}</Text>
+                      <Text style={styles.blueTitle1}>• {item.skill}</Text>
                     </View>
                   );
                 })}
@@ -215,17 +215,32 @@ function Template1({ person123, curriculum }) {
               <View>
                 <Text style={styles.whiteTitlePage}>Experience</Text>
                 {curriculum.experience.map((item) => {
+                  console.log(item.startDateMonth);
                   return (
                     <View style={styles.borderLeft}>
-                      {item.startDate && (
+                      {item.startDateMonth && (
                         <View>
                           <Text style={styles.whiteTitlePage1}>
-                            {item.startDate} -{" "}
-                            {item.endDate && (
+                            {item.startDateMonth}
+                            {item.startDateYear && (
                               <Text style={styles.whiteTitlePage1}>
-                                {item.endDate}
+                                {" "}
+                                {item.startDateYear}
                               </Text>
                             )}
+                            {item.endDateMonth && (
+                              <Text style={styles.whiteTitlePage1}>
+                                {" "}
+                                - {item.endDateMonth}
+                              </Text>
+                            )}
+                            {item.endDateYear &&
+                              item.endDateMonth !== "Present" && (
+                                <Text style={styles.whiteTitlePage1}>
+                                  {" "}
+                                  {item.endDateYear}
+                                </Text>
+                              )}
                           </Text>
                         </View>
                       )}
@@ -274,15 +289,29 @@ function Template1({ person123, curriculum }) {
                 {curriculum.education.map((item) => {
                   return (
                     <View style={styles.borderLeft}>
-                      {item.startDate && (
+                      {item.startDateMonth && (
                         <View>
                           <Text style={styles.whiteTitlePage1}>
-                            {item.startDate} -{" "}
-                            {item.endDate && (
+                            {item.startDateMonth}
+                            {item.startDateYear && (
                               <Text style={styles.whiteTitlePage1}>
-                                {item.endDate}
+                                {" "}
+                                {item.startDateYear}
                               </Text>
                             )}
+                            {item.endDateMonth && (
+                              <Text style={styles.whiteTitlePage1}>
+                                {" "}
+                                - {item.endDateMonth}
+                              </Text>
+                            )}
+                            {item.endDateYear &&
+                              item.endDateMonth !== "Present" && (
+                                <Text style={styles.whiteTitlePage1}>
+                                  {" "}
+                                  {item.endDateYear}
+                                </Text>
+                              )}
                           </Text>
                         </View>
                       )}

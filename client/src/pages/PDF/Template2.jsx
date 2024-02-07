@@ -245,15 +245,29 @@ function Template2({ person123, curriculum }) {
                 {curriculum.experience.map((item) => {
                   return (
                     <View>
-                      {item.startDate && (
+                      {item.startDateMonth && (
                         <View>
                           <Text style={styles.whiteTitlePage1}>
-                            {item.startDate} -{" "}
-                            {item.endDate && (
+                            {item.startDateMonth}
+                            {item.startDateYear && (
                               <Text style={styles.whiteTitlePage1}>
-                                {item.endDate}
+                                {" "}
+                                {item.startDateYear}
                               </Text>
                             )}
+                            {item.endDateMonth && (
+                              <Text style={styles.whiteTitlePage1}>
+                                {" "}
+                                - {item.endDateMonth}
+                              </Text>
+                            )}
+                            {item.endDateYear &&
+                              item.endDateMonth !== "Present" && (
+                                <Text style={styles.whiteTitlePage1}>
+                                  {" "}
+                                  {item.endDateYear}
+                                </Text>
+                              )}
                           </Text>
                         </View>
                       )}
@@ -304,15 +318,29 @@ function Template2({ person123, curriculum }) {
                 {curriculum.education.map((item) => {
                   return (
                     <View>
-                      {item.startDate && (
+                      {item.startDateMonth && (
                         <View>
                           <Text style={styles.whiteTitlePage1}>
-                            {item.startDate} -{" "}
-                            {item.endDate && (
+                            {item.startDateMonth}
+                            {item.startDateYear && (
                               <Text style={styles.whiteTitlePage1}>
-                                {item.endDate}
+                                {" "}
+                                {item.startDateYear}
                               </Text>
                             )}
+                            {item.endDateMonth && (
+                              <Text style={styles.whiteTitlePage1}>
+                                {" "}
+                                - {item.endDateMonth}
+                              </Text>
+                            )}
+                            {item.endDateYear &&
+                              item.endDateMonth !== "Present" && (
+                                <Text style={styles.whiteTitlePage1}>
+                                  {" "}
+                                  {item.endDateYear}
+                                </Text>
+                              )}
                           </Text>
                         </View>
                       )}

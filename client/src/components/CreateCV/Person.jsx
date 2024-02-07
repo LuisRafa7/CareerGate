@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL || `http://localhost:5005`;
+
 function Person({ setNumber, person, setPerson }) {
   const [person123, setPerson123] = useState();
   const [name, setName] = useState();
@@ -23,9 +25,7 @@ function Person({ setNumber, person, setPerson }) {
 
   const getPerson = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:5005/api/person/${personId}`
-      );
+      const response = await axios.get(`${API_URL}/api/person/${personId}`);
       setPerson123(response.data);
       setName(response.data.name ? response.data.name : "");
       setJob(response.data.job ? response.data.job : "");

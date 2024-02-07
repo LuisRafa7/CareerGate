@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL || `http://localhost:5005`;
+
 function Languages({ setNumber, curriculumVitae, setCurriculumVitae }) {
   const [languageArray, setLanguageArray] = useState(
     curriculumVitae.languages ? curriculumVitae.languages : []
@@ -20,9 +22,7 @@ function Languages({ setNumber, curriculumVitae, setCurriculumVitae }) {
 
   const getLanguages = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:5005/api/person/${personId}`
-      );
+      const response = await axios.get(`${API_URL}/api/person/${personId}`);
       setLanguageArray(response.data.curriculumVitae.languages);
     } catch (error) {
       console.error("Error fetching person:", error);

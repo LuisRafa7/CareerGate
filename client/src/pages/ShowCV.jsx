@@ -7,7 +7,10 @@ import Template1 from "./PDF/Template1";
 import Template2 from "./PDF/Template2";
 import { PDFViewer } from "@react-pdf/renderer";
 import resume1 from "../images/resume1.jpg";
+import resume2 from "../images/resume2.jpg";
 import EditCV from "./EditCV";
+
+const API_URL = import.meta.env.VITE_API_URL || `http://localhost:5005`;
 
 function ShowCV() {
   const [person123, setPerson123] = useState({});
@@ -21,12 +24,9 @@ function ShowCV() {
 
   const getPerson = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:5005/api/person/${personId}`
-      );
+      const response = await axios.get(`${API_URL}/api/person/${personId}`);
       setPerson123(response.data);
       setCurriculum(response.data.curriculumVitae);
-      console.log(response.data.curriculumVitae);
     } catch (error) {
       console.error("Error fetching person:", error);
     }
@@ -92,7 +92,7 @@ function ShowCV() {
                   </button>
                   <button onClick={page2} className="button-cv">
                     <img
-                      src={resume1}
+                      src={resume2}
                       alt="resume2"
                       style={{ width: "50px", height: "70px" }}
                     />
@@ -121,7 +121,7 @@ function ShowCV() {
                   document={
                     <Template1 person123={person123} curriculum={curriculum} />
                   }
-                  fileName="resume"
+                  fileName={`${person123.name} - template1`}
                 >
                   {({ loading }) =>
                     loading ? (
@@ -150,7 +150,7 @@ function ShowCV() {
                   document={
                     <Template2 person123={person123} curriculum={curriculum} />
                   }
-                  fileName="resume"
+                  fileName={`${person123.name} - template2`}
                 >
                   {({ loading }) =>
                     loading ? (

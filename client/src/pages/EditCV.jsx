@@ -9,6 +9,8 @@ import EditSkills from "../components/EditCV/EditSkills";
 import EditConfirm from "../components/EditCV/EditConfirm";
 import { useParams } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL || `http://localhost:5005`;
+
 function EditCV({ getPerson, person123, SetChosePage }) {
   const [number, setNumber] = useState(0);
   const [person, setPerson] = useState({
@@ -26,15 +28,13 @@ function EditCV({ getPerson, person123, SetChosePage }) {
   let { personId } = useParams();
 
   const submit = async () => {
-    const response = await axios.get(
-      `http://localhost:5005/api/person/${personId}`
-    );
+    const response = await axios.get(`${API_URL}/api/person/${personId}`);
     const response1 = await axios.put(
-      `http://localhost:5005/api/curriculumVitae/${response.data.curriculumVitae._id}`,
+      `${API_URL}/api/curriculumVitae/${response.data.curriculumVitae._id}`,
       curriculumVitae
     );
     const response2 = await axios.put(
-      `http://localhost:5005/api/person/${person123._id}`,
+      `${API_URL}/api/person/${person123._id}`,
       {
         name: person.name,
         adress: person.adress,

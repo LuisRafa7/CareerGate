@@ -7,6 +7,8 @@ import Skills from "../components/CreateCV/Skills";
 import axios from "axios";
 import Confirm from "../components/CreateCV/Confirm";
 
+const API_URL = import.meta.env.VITE_API_URL || `http://localhost:5005`;
+
 function CreateCV({ getPerson, person123 }) {
   const [number, setNumber] = useState(0);
   const [person, setPerson] = useState({
@@ -23,11 +25,11 @@ function CreateCV({ getPerson, person123 }) {
 
   const submit = async () => {
     const response = await axios.post(
-      `http://localhost:5005/api/curriculumVitae`,
+      `${API_URL}/api/curriculumVitae`,
       curriculumVitae
     );
     const response1 = await axios.put(
-      `http://localhost:5005/api/person/${person123._id}`,
+      `${API_URL}/api/person/${person123._id}`,
       {
         name: person.name,
         adress: person.adress,
@@ -45,7 +47,9 @@ function CreateCV({ getPerson, person123 }) {
 
   return (
     <div>
-      <h1 className="createcvh1" style={{paddingBottom:'20px'}}>Create your CV</h1>
+      <h1 className="createcvh1" style={{ paddingBottom: "20px" }}>
+        Create your CV
+      </h1>
       {number === 0 && (
         <Person setNumber={setNumber} person={person} setPerson={setPerson} />
       )}
