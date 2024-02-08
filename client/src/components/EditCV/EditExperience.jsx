@@ -15,6 +15,7 @@ function Experience({ setNumber, curriculumVitae, setCurriculumVitae }) {
   const [endDateMonth, setEndDateMonth] = useState();
   const [endDateYear, setEndDateYear] = useState();
   const [tasks, setTasks] = useState();
+  const [tasksArray, setTasksArray] = useState([]);
   const [city, setCity] = useState();
   const [country, setCountry] = useState();
 
@@ -44,7 +45,7 @@ function Experience({ setNumber, curriculumVitae, setCurriculumVitae }) {
       startDateYear: startDateYear,
       endDateMonth: endDateMonth,
       endDateYear: endDateYear,
-      tasks: tasks,
+      tasks: tasksArray,
       city: city,
       country: country,
     };
@@ -70,6 +71,12 @@ function Experience({ setNumber, curriculumVitae, setCurriculumVitae }) {
   const handleNext = () => {
     setNumber(2);
     setCurriculumVitae({ ...curriculumVitae, experience: experienceArray });
+  };
+
+  const addTask = (e) => {
+    e.preventDefault();
+    setTasksArray([...tasksArray, tasks]);
+    setTasks();
   };
 
   const experienceArraySorted = experienceArray.sort((a, b) => {
@@ -131,7 +138,15 @@ function Experience({ setNumber, curriculumVitae, setCurriculumVitae }) {
                       )}
                     </h5>
                   )}
-                  {one.tasks && <p>{one.tasks}</p>}
+                  {one.tasks &&
+                    one.tasks.map((item) => {
+                      console.log(item);
+                      return (
+                        <>
+                          <p style={{ fontSize: "18px" }}>• {item}</p>
+                        </>
+                      );
+                    })}
                   <button
                     className="button4 btn-third"
                     onClick={() => {
@@ -465,6 +480,14 @@ function Experience({ setNumber, curriculumVitae, setCurriculumVitae }) {
           <label htmlFor="tasks" className="exp-p">
             Tasks:
           </label>
+          {tasksArray &&
+            tasksArray.map((item) => {
+              return (
+                <ul>
+                  <li style={{ lineHeight: "0" }}>{item}</li>
+                </ul>
+              );
+            })}
           <input
             className="inputcv"
             style={{
@@ -478,10 +501,12 @@ function Experience({ setNumber, curriculumVitae, setCurriculumVitae }) {
             }}
             type="text"
             name="tasks"
+            value={tasks}
             onChange={(e) => {
               setTasks(e.target.value);
             }}
           />
+          <button onClick={addTask}>Add Task</button>
           <label htmlFor="city" className="exp-p">
             City:
           </label>
